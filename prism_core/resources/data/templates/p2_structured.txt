@@ -1,0 +1,13 @@
+Task: Select the correct option.
+
+Question:
+{question}
+
+Options:
+A. {option_a}
+B. {option_b}
+C. {option_c}
+D. {option_d}
+
+Required output:
+Return only the letter of the correct option.

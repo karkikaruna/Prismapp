@@ -1,0 +1,9 @@
+model,dataset,n_questions,expected_prompt_responses,observed_prompt_responses,missing_prompt_responses,prompt_response_accuracy,conditional_accuracy,answer_recovery_rate,unknown_rate,instruction_compliance_rate,question_majority_accuracy,mean_agreement,mean_prompt_sensitivity,complete_questions,answer_unanimous_rate,prompt_invariant_incorrect_rate
+gemma3:4b,arc_challenge,200,1000,1000,0,0.738,0.738,1.0,0.0,1.0,0.73,0.943,0.057,200,0.79,0.135
+gemma3:4b,sciq,200,1000,1000,0,0.885,0.8859,0.999,0.001,0.999,0.895,0.974,0.026,200,0.915,0.07
+llama3.2:3b,arc_challenge,200,1000,1000,0,0.69,0.6914,0.998,0.002,0.913,0.71,0.93,0.07,200,0.735,0.17
+llama3.2:3b,sciq,200,1000,1000,0,0.884,0.8876,0.996,0.004,0.971,0.895,0.979,0.021,200,0.92,0.075
+mistral:7b,arc_challenge,200,1000,1000,0,0.731,0.731,1.0,0.0,0.238,0.735,0.936,0.064,200,0.785,0.155
+mistral:7b,sciq,200,1000,1000,0,0.865,0.8667,0.998,0.002,0.262,0.87,0.973,0.027,200,0.895,0.08
+phi4-mini:latest,arc_challenge,200,1000,1000,0,0.808,0.8162,0.99,0.01,0.101,0.795,0.9428,0.0573,200,0.815,0.09
+phi4-mini:latest,sciq,200,1000,1000,0,0.931,0.9329,0.998,0.002,0.109,0.935,0.98,0.02,200,0.925,0.035

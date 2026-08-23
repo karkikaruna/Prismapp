@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=PRISM
+Comment=Behavioral consistency benchmark for local LLMs
+Exec=PRISM
+Icon=prism
+Categories=Development;Science;
+Terminal=false
+StartupWMClass=PRISM

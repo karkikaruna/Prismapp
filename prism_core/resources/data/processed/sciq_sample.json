@@ -1,0 +1,2610 @@
+{
+  "dataset": "sciq",
+  "sample_size": 200,
+  "sampling_seed": 2026,
+  "source_split": "test",
+  "question_ids": [
+    "SCIQ_03cdf39d279383df",
+    "SCIQ_04132ff898e24e75",
+    "SCIQ_05e0badf8d11ea7a",
+    "SCIQ_063bcbbbbde147ac",
+    "SCIQ_07b7c3b57b3868bd",
+    "SCIQ_09ae58eec6aefd63",
+    "SCIQ_0a67372d19c6f8c3",
+    "SCIQ_0f37450a7be98a14",
+    "SCIQ_103bfb95382af0b4",
+    "SCIQ_12c34343fd54c71d",
+    "SCIQ_159f384c53662049",
+    "SCIQ_1616e5d6fc9265c7",
+    "SCIQ_163b0a9a123dbfc0",
+    "SCIQ_18f8412c3efc55e6",
+    "SCIQ_1944043f52d2ca7f",
+    "SCIQ_19d0844e980ea642",
+    "SCIQ_1a20457ac47b7685",
+    "SCIQ_1acfc8d2230c33e5",
+    "SCIQ_22483a1aecb29e9c",
+    "SCIQ_22f8427e667b6207",
+    "SCIQ_23ab6096c997fb40",
+    "SCIQ_23bbeb61ecac2acd",
+    "SCIQ_28d1a7fcd6c3c0aa",
+    "SCIQ_2fd1378dca135ddd",
+    "SCIQ_31a32c0cbd442a28",
+    "SCIQ_34285577de49148e",
+    "SCIQ_35469a68eff39648",
+    "SCIQ_35555293a5868263",
+    "SCIQ_360da1c9382115fd",
+    "SCIQ_38a127066a543e1e",
+    "SCIQ_3a1df8318ef05b0f",
+    "SCIQ_3b1651cdeca0a7f0",
+    "SCIQ_3e3ea3681c63050f",
+    "SCIQ_3ed0c65caa808980",
+    "SCIQ_3fef7597f20708b6",
+    "SCIQ_4098d397b1ab2e02",
+    "SCIQ_414770c1ca7c4e26",
+    "SCIQ_42e2908d77a70aef",
+    "SCIQ_43368fd6e0222065",
+    "SCIQ_4361dbf6c559b71d",
+    "SCIQ_43b20e7ebdf93b71",
+    "SCIQ_4522dc21a421e408",
+    "SCIQ_45b00359c61d0d91",
+    "SCIQ_4762276a2d94d2b4",
+    "SCIQ_47673c512c45087f",
+    "SCIQ_4c06b3bf8b99fa5f",
+    "SCIQ_4c4bc31956b37571",
+    "SCIQ_4d0023112f6cc582",
+    "SCIQ_4d67269e881932d5",
+    "SCIQ_4dfa940b3b1d330c",
+    "SCIQ_4e206a9d96824341",
+    "SCIQ_4e21afdc821590b4",
+    "SCIQ_4f53d9ce4850832c",
+    "SCIQ_4fa5d7df411b589c",
+    "SCIQ_51334e12a9d877ba",
+    "SCIQ_513a2ab226830b9a",
+    "SCIQ_522e0c188661a86e",
+    "SCIQ_5280796b7605a5fe",
+    "SCIQ_52f77a1ff5a3ec1e",
+    "SCIQ_55d73b7083a17286",
+    "SCIQ_567e6ee56dd347bb",
+    "SCIQ_56a5b2d8f153629c",
+    "SCIQ_5951e141e4019a82",
+    "SCIQ_5bbacb8a428dd24f",
+    "SCIQ_5bd9b197823de2f9",
+    "SCIQ_5f3c0195f591682f",
+    "SCIQ_5f7f192d9062bafc",
+    "SCIQ_5fa1f90a769c76b0",
+    "SCIQ_603bb64adbc8602d",
+    "SCIQ_60653a24658fc525",
+    "SCIQ_6260cd8d8b74c115",
+    "SCIQ_64f62837c809e80f",
+    "SCIQ_66a19e243a8bc0b0",
+    "SCIQ_6dd1cab1af95846c",
+    "SCIQ_6e6ee52bb26a553e",
+    "SCIQ_6e9889b097a2f6c6",
+    "SCIQ_703f0b0f677a7c3f",
+    "SCIQ_7088d396511509b9",
+    "SCIQ_730232d9fbaa5556",
+    "SCIQ_749d4a54aaf6d8bd",
+    "SCIQ_74c12a6065307b09",
+    "SCIQ_7a42007420cd32c5",
+    "SCIQ_7ac842904627e4d4",
+    "SCIQ_7cb5656ef7e97851",
+    "SCIQ_7f62aee516551bb3",
+    "SCIQ_7fec083e9aa228ce",
+    "SCIQ_803e6637ccea6d28",
+    "SCIQ_804356411f2709c7",
+    "SCIQ_818a826b42a36c36",
+    "SCIQ_84c163388ce6c80b",
+    "SCIQ_8548fc77e11a77d6",
+    "SCIQ_86df2d6e8446de39",
+    "SCIQ_87245e7c47e34fd7",
+    "SCIQ_880d742267991984",
+    "SCIQ_898cb5e8f75e8b8a",
+    "SCIQ_8a24ecce9122c124",
+    "SCIQ_8b669e77059aee04",
+    "SCIQ_8d7649b4da2e2c7b",
+    "SCIQ_8dd7be30f15cda8f",
+    "SCIQ_8e1e8243025ae94b",
+    "SCIQ_8e2b3e6359099d25",
+    "SCIQ_8e544fc2ab40567e",
+    "SCIQ_8f13ef0208b7212d",
+    "SCIQ_9221ecfcff99c9d2",
+    "SCIQ_95bb988aa2faa238",
+    "SCIQ_9640c28b0c6ada94",
+    "SCIQ_967413e1f41fe015",
+    "SCIQ_9710f09b6070bfe3",
+    "SCIQ_978dab91c31c98c7",
+    "SCIQ_9b8e16766c7264f1",
+    "SCIQ_9bdf7fc3b8fc51f8",
+    "SCIQ_9d07b51b74b7f840",
+    "SCIQ_9f3431a8a8120c9f",
+    "SCIQ_a040967ba4c80d75",
+    "SCIQ_a25a8bb7ad0e6daa",
+    "SCIQ_a301736ba8d6ea96",
+    "SCIQ_a3e4a6bda77f4093",
+    "SCIQ_a428ac97bd22a7e4",
+    "SCIQ_a5af515dd7f05940",
+    "SCIQ_a66659b047ec13d8",
+    "SCIQ_a6746546ff664727",
+    "SCIQ_a8b7d66d2c451e7d",
+    "SCIQ_a95666cb32f7e820",
+    "SCIQ_a9af0fec15808f79",
+    "SCIQ_aa4ae58d4c687cd7",
+    "SCIQ_ab99b0e6033c6d18",
+    "SCIQ_acc57b78d9a75d6a",
+    "SCIQ_ad5b9d18599c5c5c",
+    "SCIQ_ad83819df64d84a9",
+    "SCIQ_adf0c567f7ba9ff2",
+    "SCIQ_ae703804123bdd88",
+    "SCIQ_ae9eb406c98d4b99",
+    "SCIQ_b2ee4704a3b7de64",
+    "SCIQ_b3864fe1398f6365",
+    "SCIQ_b4895e27a93ece48",
+    "SCIQ_b6ba65f6ca893f58",
+    "SCIQ_b75da9cf8f993168",
+    "SCIQ_b8e313b9b204f1f3",
+    "SCIQ_b9c2f1741c669358",
+    "SCIQ_ba5c5962d0e15b3b",
+    "SCIQ_ba702afa77fb831f",
+    "SCIQ_bb822260788cd3c1",
+    "SCIQ_bbdd77a91a81fdce",
+    "SCIQ_bce39658271de426",
+    "SCIQ_bd02533bf0694b45",
+    "SCIQ_bda4f99b88340f7a",
+    "SCIQ_bde55a71d6cb3f52",
+    "SCIQ_c0386df798f740ae",
+    "SCIQ_c0b41851333eb558",
+    "SCIQ_c2e1cdbabff52fc9",
+    "SCIQ_c3905241a634838a",
+    "SCIQ_c63d56d65f1fef48",
+    "SCIQ_c79e71670f2e2ef0",
+    "SCIQ_c7b6fb70021f76e1",
+    "SCIQ_c8790820a46791d0",
+    "SCIQ_cace8f73c6d80fe0",
+    "SCIQ_caec26c0475f834e",
+    "SCIQ_cb3461110afc7d1f",
+    "SCIQ_cd3cb677340217d5",
+    "SCIQ_cd7d8338982d4c93",
+    "SCIQ_cf901a7aec269a61",
+    "SCIQ_d09f59d9f8cac315",
+    "SCIQ_d2cb8372c6bdfdb2",
+    "SCIQ_d37bbfdf96e96d7a",
+    "SCIQ_d45286d49cc01b9e",
+    "SCIQ_d664245fdf444928",
+    "SCIQ_d9c26b1612e67295",
+    "SCIQ_da1b317fa61b1dd4",
+    "SCIQ_da79309bbb7695aa",
+    "SCIQ_dad9072b7f86a00e",
+    "SCIQ_daf800e6b5b1ee62",
+    "SCIQ_dccb317b77fb8c3e",
+    "SCIQ_ddbe52df51be3fde",
+    "SCIQ_de763e484f9ec0e0",
+    "SCIQ_df3495ee7730c23e",
+    "SCIQ_e014a5d2c98b94d0",
+    "SCIQ_e09c1c9bd8cca45a",
+    "SCIQ_e3a8b7f8dd457786",
+    "SCIQ_e49807bc5172c9e0",
+    "SCIQ_e537a556069749cd",
+    "SCIQ_e9399b1d51036b6c",
+    "SCIQ_eaa5137da7479f4c",
+    "SCIQ_eb7aa8f4822dff98",
+    "SCIQ_ec928271e7209e15",
+    "SCIQ_edad8ddebdf33f8d",
+    "SCIQ_ee541d21e4e6e474",
+    "SCIQ_f3fe645e5c4bbe41",
+    "SCIQ_f4fac7f7d0b0bf38",
+    "SCIQ_f537a14a6ce74f25",
+    "SCIQ_f6553d3ab9908fec",
+    "SCIQ_f75ab12ae3c50f4e",
+    "SCIQ_f7de256c7dbd63ce",
+    "SCIQ_f87480d719a8d580",
+    "SCIQ_f9c8d1d09e740bf3",
+    "SCIQ_fb0adbc2e39475d5",
+    "SCIQ_fb1e062806f87d68",
+    "SCIQ_fc525614bd506631",
+    "SCIQ_fd9a94bc63462967",
+    "SCIQ_fda62f7be85a6dea",
+    "SCIQ_fe25b092bcc9a4f9"
+  ],
+  "questions": [
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_03cdf39d279383df",
+      "question": "What bond is the force of attraction that holds together two atoms that share a pair of valence electrons?",
+      "options": {
+        "A": "metallic",
+        "B": "covalent",
+        "C": "hydrogen",
+        "D": "polar"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_04132ff898e24e75",
+      "question": "The bony socket that houses the eyeball and associated muscles is called?",
+      "options": {
+        "A": "cavity",
+        "B": "orbit",
+        "C": "glenoid fossa",
+        "D": "acetabulum"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_05e0badf8d11ea7a",
+      "question": "What does the gradient of bicoid protein determine?",
+      "options": {
+        "A": "vertical-horizontal plane",
+        "B": "east-west axis",
+        "C": "shallow - posterior axis",
+        "D": "anterior-posterior axis"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_063bcbbbbde147ac",
+      "question": "The chemical and/or physical agents that cause mutations are called what?",
+      "options": {
+        "A": "genes",
+        "B": "dioxins",
+        "C": "organelles",
+        "D": "mutagens"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_07b7c3b57b3868bd",
+      "question": "Most mammals are viviparous, which refers to what reproductive result?",
+      "options": {
+        "A": "live birth",
+        "B": "spawning",
+        "C": "laying eggs",
+        "D": "identical twins"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_09ae58eec6aefd63",
+      "question": "What are the simplest organic compounds?",
+      "options": {
+        "A": "carbohydrates",
+        "B": "hydrocarbons",
+        "C": "proteins",
+        "D": "enzymes"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_0a67372d19c6f8c3",
+      "question": "Two significant parts of the heat include the atrium and its counterpart, which is what?",
+      "options": {
+        "A": "ventricle",
+        "B": "valve",
+        "C": "cells",
+        "D": "skeletal"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_0f37450a7be98a14",
+      "question": "The main shaft of the penis is covered by relatively thick what?",
+      "options": {
+        "A": "collagen",
+        "B": "skin",
+        "C": "cellulose",
+        "D": "bone"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_103bfb95382af0b4",
+      "question": "What anatomical feature is shared by all chordates?",
+      "options": {
+        "A": "isochord",
+        "B": "botachord",
+        "C": "notochord",
+        "D": "laxchord"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_12c34343fd54c71d",
+      "question": "Nerve cells that sense touch are found mainly where?",
+      "options": {
+        "A": "lungs",
+        "B": "skin",
+        "C": "brain",
+        "D": "stomach"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_159f384c53662049",
+      "question": "What absorbs, scatters, or reflects most incoming solar radiation in the atmosphere?",
+      "options": {
+        "A": "coulds and minerals",
+        "B": "clouds and sand",
+        "C": "clouds and dust",
+        "D": "ice and dust"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_1616e5d6fc9265c7",
+      "question": "Any nucleus that is unstable and decays spontaneously is said to be what?",
+      "options": {
+        "A": "neutral",
+        "B": "radioactive",
+        "C": "dull",
+        "D": "magnetic"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_163b0a9a123dbfc0",
+      "question": "Railroad tracks and roadways can buckle on hot days if they lack sufficient what?",
+      "options": {
+        "A": "expansion joints",
+        "B": "contraction joints",
+        "C": "attraction joints",
+        "D": "cartilaginous joints"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_18f8412c3efc55e6",
+      "question": "Why do snakes have venomous bites?",
+      "options": {
+        "A": "to scare humans",
+        "B": "to kill prey",
+        "C": "to kill rival snakes",
+        "D": "to clean themselves"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_1944043f52d2ca7f",
+      "question": "The softer connective tissue that fills the interior of most bone is referred to as what?",
+      "options": {
+        "A": "bone marrow",
+        "B": "solid marrow",
+        "C": "attached marrow",
+        "D": "liquid marrow"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_19d0844e980ea642",
+      "question": "The left atrium receives oxygen-rich blood from which organs?",
+      "options": {
+        "A": "pancreas",
+        "B": "brain",
+        "C": "lungs",
+        "D": "liver"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_1a20457ac47b7685",
+      "question": "What can we learn about a wave by finding the product of the wavelength and frequency?",
+      "options": {
+        "A": "volume",
+        "B": "speed",
+        "C": "type",
+        "D": "decibels"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_1acfc8d2230c33e5",
+      "question": "The three main body segments of an arthropod are head, thorax, and what?",
+      "options": {
+        "A": "tail",
+        "B": "abdomen",
+        "C": "legs",
+        "D": "gluteus"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_22483a1aecb29e9c",
+      "question": "In multicellular organisms, essential biological functions are carried out by what?",
+      "options": {
+        "A": "organs",
+        "B": "atoms",
+        "C": "molecules",
+        "D": "cells"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_22f8427e667b6207",
+      "question": "Like the platypus, the echnida is a what?",
+      "options": {
+        "A": "monotreme",
+        "B": "Gives Live birth",
+        "C": "prosauropod",
+        "D": "dugongs"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_23ab6096c997fb40",
+      "question": "What disease occurs when the cell cycle is no longer regulated?",
+      "options": {
+        "A": "schizophrenia",
+        "B": "allergy",
+        "C": "cancer",
+        "D": "malnutrition"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_23bbeb61ecac2acd",
+      "question": "Calcium ion is an example of what kind of messenger?",
+      "options": {
+        "A": "third",
+        "B": "first",
+        "C": "fourth",
+        "D": "second"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_28d1a7fcd6c3c0aa",
+      "question": "What is the process called where nitrogen is repeatedly recycled through the biosphere?",
+      "options": {
+        "A": "nitrogen cycle",
+        "B": "ammonia cycle",
+        "C": "water cycle",
+        "D": "nitrogen path"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_2fd1378dca135ddd",
+      "question": "The majority of elements, including iron and copper, are of what type?",
+      "options": {
+        "A": "acids",
+        "B": "minerals",
+        "C": "oils",
+        "D": "metals"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_31a32c0cbd442a28",
+      "question": "What type of diseases occur when the immune system attacks normal body cells?",
+      "options": {
+        "A": "inflammatory",
+        "B": "gastrointestinal",
+        "C": "liver",
+        "D": "autoimmune"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_34285577de49148e",
+      "question": "Highly reactive nonmetals, which only accept electrons and do not give them up, make poor what?",
+      "options": {
+        "A": "electromagnets",
+        "B": "alloys",
+        "C": "insulators",
+        "D": "electricity conductors"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_35469a68eff39648",
+      "question": "What term describes the distance between two corresponding points on adjacent waves?",
+      "options": {
+        "A": "variation",
+        "B": "wavelength",
+        "C": "threshold",
+        "D": "frequency"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_35555293a5868263",
+      "question": "Groups of three bases form codons, and each codon stands for one what?",
+      "options": {
+        "A": "compound acid",
+        "B": "amino acid",
+        "C": "minimal acid",
+        "D": "sulferic acid"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_360da1c9382115fd",
+      "question": "How many ways are there for a species to go extinct?",
+      "options": {
+        "A": "two",
+        "B": "four",
+        "C": "eight",
+        "D": "Ten"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_38a127066a543e1e",
+      "question": "Properties of matter can be considered physical or?",
+      "options": {
+        "A": "chemical",
+        "B": "liquid",
+        "C": "mineral",
+        "D": "gas"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_3a1df8318ef05b0f",
+      "question": "Many plants respond to the days growing shorter in the fall by doing what?",
+      "options": {
+        "A": "growing faster",
+        "B": "migrating",
+        "C": "turning to liquid",
+        "D": "going dormant"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_3b1651cdeca0a7f0",
+      "question": "What is produced by the end of meiosis?",
+      "options": {
+        "A": "three haploid cells",
+        "B": "sixteen haploid cells",
+        "C": "four haploid cells",
+        "D": "eight haploid cells"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_3e3ea3681c63050f",
+      "question": "What is written as systolic over diastolic?",
+      "options": {
+        "A": "fractional pressure",
+        "B": "blood position",
+        "C": "brain pressure",
+        "D": "blood pressure"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_3ed0c65caa808980",
+      "question": "Like the frame of a house, what gives the cell an internal structure?",
+      "options": {
+        "A": "cytoskeleton",
+        "B": "cytoplasm",
+        "C": "cellulose",
+        "D": "endoskeleton"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_3fef7597f20708b6",
+      "question": "Fungi, such as black bread mold (rhizopus nigricans), have haploid-dominant what?",
+      "options": {
+        "A": "birth cycles",
+        "B": "life cycles",
+        "C": "mutations",
+        "D": "gene pools"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4098d397b1ab2e02",
+      "question": "Each species has a particular way of making a living which is called its what?",
+      "options": {
+        "A": "life-cycle",
+        "B": "niche",
+        "C": "system",
+        "D": "habit"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_414770c1ca7c4e26",
+      "question": "What is a mixture of a solute in a solvent called?",
+      "options": {
+        "A": "structure",
+        "B": "transition",
+        "C": "link",
+        "D": "solution"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_42e2908d77a70aef",
+      "question": "When a species changes in small ways over time, what is it called?",
+      "options": {
+        "A": "nanoevolution",
+        "B": "small evolution",
+        "C": "minievolution",
+        "D": "microevolution"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_43368fd6e0222065",
+      "question": "Some bacteria cannot be cultured because they are obligate intracellular parasites and cannot be grown outside what?",
+      "options": {
+        "A": "host cell",
+        "B": "sponsor cell",
+        "C": "brain cell",
+        "D": "anchor cell"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4361dbf6c559b71d",
+      "question": "Hydrogen atoms form only one covalent bond because they have only one have one of what to pair with it?",
+      "options": {
+        "A": "valence electron",
+        "B": "loops electron",
+        "C": "modular electron",
+        "D": "Water electron"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_43b20e7ebdf93b71",
+      "question": "What type of climate does the coast of california have?",
+      "options": {
+        "A": "mediterranean",
+        "B": "rainforest",
+        "C": "tropical",
+        "D": "arctic"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4522dc21a421e408",
+      "question": "What is citrate an ionized form of?",
+      "options": {
+        "A": "hydrochloric acid",
+        "B": "protein",
+        "C": "citric acid",
+        "D": "carbonic acid"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_45b00359c61d0d91",
+      "question": "What form of reproduction creates offspring that are genetically identical to the parent?",
+      "options": {
+        "A": "microscopic",
+        "B": "sexual",
+        "C": "primitive",
+        "D": "asexual"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4762276a2d94d2b4",
+      "question": "In our bodies, the chest cavity is a clear example of a system at what?",
+      "options": {
+        "A": "rest",
+        "B": "resonance",
+        "C": "scale",
+        "D": "default"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_47673c512c45087f",
+      "question": "The bilaterians are divided into deuterostomes and what else?",
+      "options": {
+        "A": "progestins",
+        "B": "protostomes",
+        "C": "gymnosperms",
+        "D": "protozoa"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4c06b3bf8b99fa5f",
+      "question": "What record shows that dinosaurs originated 200-250 million years ago?",
+      "options": {
+        "A": "biological record",
+        "B": "species record",
+        "C": "ancient record",
+        "D": "fossil record"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4c4bc31956b37571",
+      "question": "What is the most common cause of down syndrome?",
+      "options": {
+        "A": "trisomy 22",
+        "B": "chromosome 21",
+        "C": "trisomy 21",
+        "D": "gametes 21"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4d0023112f6cc582",
+      "question": "What prevents new ovarian follicles from developing and suppresses uterine contractility?",
+      "options": {
+        "A": "glucose",
+        "B": "germination",
+        "C": "estrogen",
+        "D": "progesterone"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4d67269e881932d5",
+      "question": "A vector is an organism that carries what disease-causing microorganisms from one person or animal to another?",
+      "options": {
+        "A": "microbe",
+        "B": "pathogen",
+        "C": "microbe",
+        "D": "genome"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4dfa940b3b1d330c",
+      "question": "What happens when mammals raise their hair with tiny muscles in the skin?",
+      "options": {
+        "A": "bruising",
+        "B": "balding",
+        "C": "goosebumps",
+        "D": "bleeding"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4e206a9d96824341",
+      "question": "On what day of the cycle does ovulation usually occur?",
+      "options": {
+        "A": "1st",
+        "B": "17th",
+        "C": "14th",
+        "D": "7th"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4e21afdc821590b4",
+      "question": "What is the outer layer of the exoskeleton called?",
+      "options": {
+        "A": "epithelium",
+        "B": "bristle",
+        "C": "cuticle",
+        "D": "epidermis"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4f53d9ce4850832c",
+      "question": "What structures located on chromosomes control characteristics of life and are passed from parents to offspring?",
+      "options": {
+        "A": "axons",
+        "B": "genes",
+        "C": "eggs",
+        "D": "cells"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_4fa5d7df411b589c",
+      "question": "Which form of dialysis has a patient’s blood pass through a length of tubing that travels through an artificial kidney machine?",
+      "options": {
+        "A": "arterial dialysis",
+        "B": "hemodialysis",
+        "C": "limbic dialysis",
+        "D": "peritoneal dialysis"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_51334e12a9d877ba",
+      "question": "What cycle is part of cellular respiration and makes atp and naph?",
+      "options": {
+        "A": "krebs",
+        "B": "carbon cycle",
+        "C": "water cycle",
+        "D": "vireos"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_513a2ab226830b9a",
+      "question": "What are different versions of a gene known as?",
+      "options": {
+        "A": "genomes",
+        "B": "alleles",
+        "C": "ion",
+        "D": "modes"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_522e0c188661a86e",
+      "question": "Spongy bone is found inside bones and is lighter and less dense than compact bone because it is what?",
+      "options": {
+        "A": "pliable",
+        "B": "amorphous",
+        "C": "porous",
+        "D": "fibrous"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_5280796b7605a5fe",
+      "question": "How do very massive stars end their lives?",
+      "options": {
+        "A": "consumed by black hole",
+        "B": "become red supergiants",
+        "C": "explode",
+        "D": "become super novas"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_52f77a1ff5a3ec1e",
+      "question": "What is the term for the relatively stable state inside the body of an animal?",
+      "options": {
+        "A": "metabolism",
+        "B": "dormancy",
+        "C": "homeostasis",
+        "D": "consciousness"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_55d73b7083a17286",
+      "question": "What structures are at the end of the long air passages in the lungs?",
+      "options": {
+        "A": "Larynx",
+        "B": "alveoli",
+        "C": "chloride",
+        "D": "Oral Cavity"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_567e6ee56dd347bb",
+      "question": "The tibia is the larger, weight-bearing bone located on the medial side of the leg. the fibula is the slender bone of the lateral side of the leg and does not do what?",
+      "options": {
+        "A": "support weight",
+        "B": "drive weight",
+        "C": "resist weight",
+        "D": "bear weight"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_56a5b2d8f153629c",
+      "question": "A solenoid wrapped around a bar of iron or other ferromagnetic material forms what?",
+      "options": {
+        "A": "electromagnet",
+        "B": "compress",
+        "C": "impoundment",
+        "D": "compass"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_5951e141e4019a82",
+      "question": "Anaerobic cellular respiration does not require the presence of what (by the very fact it is anaerobic, specifically)?",
+      "options": {
+        "A": "oxygen",
+        "B": "carbon",
+        "C": "helium",
+        "D": "nitrogen"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_5bbacb8a428dd24f",
+      "question": "If the buoyant force is greater than the force of gravity acting on a ship, what will happen to the ship?",
+      "options": {
+        "A": "it will explode",
+        "B": "it will sink",
+        "C": "it will float",
+        "D": "it will bobble"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_5bd9b197823de2f9",
+      "question": "What are reptiles unable to absorb through their skin because of scales?",
+      "options": {
+        "A": "oxygen",
+        "B": "water",
+        "C": "food",
+        "D": "carbon"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_5f3c0195f591682f",
+      "question": "The hypothalamus is actually part of the brain, but it also secretes what?",
+      "options": {
+        "A": "hormones",
+        "B": "acids",
+        "C": "electrolytes",
+        "D": "enzymes"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_5f7f192d9062bafc",
+      "question": "What is the most abundant metal of the earth's crust?",
+      "options": {
+        "A": "calcium",
+        "B": "magnetite",
+        "C": "aluminum",
+        "D": "copper"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_5fa1f90a769c76b0",
+      "question": "Corrosion is usually defined as the degradation of metals due to what?",
+      "options": {
+        "A": "electrochemical process",
+        "B": "nuclear process",
+        "C": "crystalline process",
+        "D": "oscillatory process"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_603bb64adbc8602d",
+      "question": "A sealed, vacuum-insulated reaction flask approximates what condition, in which neither matter nor heat can be exchanged between system and surroundings?",
+      "options": {
+        "A": "sure system",
+        "B": "shared system",
+        "C": "changing system",
+        "D": "isolated system"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_60653a24658fc525",
+      "question": "Angiosperm seed develops inside of what?",
+      "options": {
+        "A": "a kidney",
+        "B": "fallopian tubes",
+        "C": "an ovary",
+        "D": "the pancreas"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_6260cd8d8b74c115",
+      "question": "Yeasts, molds, and mushrooms are all different kinds of what?",
+      "options": {
+        "A": "pollen",
+        "B": "fungi",
+        "C": "bacteria",
+        "D": "fossil"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_64f62837c809e80f",
+      "question": "What element is the most abundant in the universe?",
+      "options": {
+        "A": "oxygen",
+        "B": "carbon",
+        "C": "hydrogen",
+        "D": "helium"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_66a19e243a8bc0b0",
+      "question": "What is the passing of traits from parents to offspring called?",
+      "options": {
+        "A": "cell division",
+        "B": "mutation",
+        "C": "variability",
+        "D": "heredity"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_6dd1cab1af95846c",
+      "question": "What kind of muscle is the heart mainly composed of?",
+      "options": {
+        "A": "cardiac muscle",
+        "B": "respiratory muscle",
+        "C": "idealized muscle",
+        "D": "nerve muscle"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_6e6ee52bb26a553e",
+      "question": "What do mammals have under the skin to help insulate the body?",
+      "options": {
+        "A": "a layer of fat",
+        "B": "bone",
+        "C": "nerve cells",
+        "D": "cartilage"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_6e9889b097a2f6c6",
+      "question": "The process in which a gas changes to a liquid is called what?",
+      "options": {
+        "A": "vaporing",
+        "B": "condensation",
+        "C": "fermentation",
+        "D": "diffusion"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_703f0b0f677a7c3f",
+      "question": "What is the most abundant of all vertebrate classes, and the most recent to evolve?",
+      "options": {
+        "A": "birds",
+        "B": "mammals",
+        "C": "bony fishes",
+        "D": "reptiles"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_7088d396511509b9",
+      "question": "Non-human organisms that mainly consume plants/other primary producers are known as what?",
+      "options": {
+        "A": "omnivores",
+        "B": "amphibians",
+        "C": "herbivores",
+        "D": "carnivores"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_730232d9fbaa5556",
+      "question": "The three parts of the human small intestine is the duodenum, jejunum, and what?",
+      "options": {
+        "A": "ileum",
+        "B": "colon",
+        "C": "cecum",
+        "D": "appendix"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_749d4a54aaf6d8bd",
+      "question": "What type of bombs put a much larger fraction of their output into thermal energy than do conventional bombs?",
+      "options": {
+        "A": "dense bombs",
+        "B": "TNT",
+        "C": "dirty bombs",
+        "D": "nuclear"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_74c12a6065307b09",
+      "question": "Trees, which can be planted and harvested, are an example of what type of resource?",
+      "options": {
+        "A": "renewable",
+        "B": "fossil",
+        "C": "geothermal",
+        "D": "electric"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_7a42007420cd32c5",
+      "question": "What kind of diffusion do small hydrophobic molecules squeeze through lipid molecules?",
+      "options": {
+        "A": "complex",
+        "B": "simple",
+        "C": "slippery",
+        "D": "difficult"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_7ac842904627e4d4",
+      "question": "What are groups of stars called that are smaller than a galaxy?",
+      "options": {
+        "A": "star clusters",
+        "B": "Milky Way",
+        "C": "nebuli",
+        "D": "constellations"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_7cb5656ef7e97851",
+      "question": "Do changes to rocks happen quickly or slowly?",
+      "options": {
+        "A": "slowly",
+        "B": "quickly then slowly",
+        "C": "slowly then quickly",
+        "D": "quickly"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_7f62aee516551bb3",
+      "question": "What structure collect fluid that leaks out from blood capillaries?",
+      "options": {
+        "A": "pulmonary capillaries",
+        "B": "alveoli",
+        "C": "lymph capillaries",
+        "D": "varicose veins"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_7fec083e9aa228ce",
+      "question": "What are solids with high melting and boiling points?",
+      "options": {
+        "A": "superheated compounds",
+        "B": "ionic compounds",
+        "C": "magnetic compounds",
+        "D": "metal alloys"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_803e6637ccea6d28",
+      "question": "The medium moves back and forth in the same direction as the wave in what type of wave?",
+      "options": {
+        "A": "longitudinal wave",
+        "B": "latitudinal wave",
+        "C": "variable wave",
+        "D": "kinetic wave"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_804356411f2709c7",
+      "question": "What do waves deposit to form sandbars and barrier islands?",
+      "options": {
+        "A": "sediments",
+        "B": "glaciers",
+        "C": "magma",
+        "D": "organisms"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_818a826b42a36c36",
+      "question": "In which constellation is the helix nebula located?",
+      "options": {
+        "A": "prometheus",
+        "B": "aquarius",
+        "C": "gemini",
+        "D": "zodiac"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_84c163388ce6c80b",
+      "question": "What patterns in trees can be used to determine its age?",
+      "options": {
+        "A": "colors",
+        "B": "bark ridges",
+        "C": "rings",
+        "D": "veins"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_8548fc77e11a77d6",
+      "question": "The evaporative loss of the most energetic water molecules does what to a surface?",
+      "options": {
+        "A": "cools it",
+        "B": "charges it",
+        "C": "heats it",
+        "D": "vents it"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_86df2d6e8446de39",
+      "question": "At a synapse, what objects are released to carry a nerve impulse from one neuron to the next?",
+      "options": {
+        "A": "neurotransmitters",
+        "B": "viruses",
+        "C": "microorganisms",
+        "D": "receptors"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_87245e7c47e34fd7",
+      "question": "Malonate plays what negative role on the enzyme succinate dehydrogenase?",
+      "options": {
+        "A": "inhibitor",
+        "B": "catalyst",
+        "C": "pathway",
+        "D": "receptor"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_880d742267991984",
+      "question": "What happens to energy when work is done by a system?",
+      "options": {
+        "A": "removed",
+        "B": "multiplied",
+        "C": "stored",
+        "D": "added"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_898cb5e8f75e8b8a",
+      "question": "Cnidarians are an example of organisms that possess a simple type of what system, used for sensing touch?",
+      "options": {
+        "A": "nervous system",
+        "B": "lymphatic system",
+        "C": "circulatory system",
+        "D": "bacterial system"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_8a24ecce9122c124",
+      "question": "What part of the eye allows light to enter?",
+      "options": {
+        "A": "eyelid",
+        "B": "iris",
+        "C": "pupil",
+        "D": "retina"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_8b669e77059aee04",
+      "question": "What is the si unit for weight?",
+      "options": {
+        "A": "newton (n)",
+        "B": "kilograms (kg)",
+        "C": "meters (m)",
+        "D": "pounds (lbs)"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_8d7649b4da2e2c7b",
+      "question": "What part of the sperm contains the nucleus?",
+      "options": {
+        "A": "nucleus",
+        "B": "head",
+        "C": "tail",
+        "D": "body"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_8dd7be30f15cda8f",
+      "question": "What is the name of the skull that covers the brain and protects it?",
+      "options": {
+        "A": "mandible",
+        "B": "the cranium",
+        "C": "cerebrum",
+        "D": "Nasal bone"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_8e1e8243025ae94b",
+      "question": "While numerous elements can undergo fission, only a few can be used as fuels in what nuclear devices?",
+      "options": {
+        "A": "laser beams",
+        "B": "accelerators",
+        "C": "colliders",
+        "D": "reactors"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_8e2b3e6359099d25",
+      "question": "What do you call the basic units of the structure and function of living things?",
+      "options": {
+        "A": "cells",
+        "B": "enzymes",
+        "C": "molecules",
+        "D": "proteins"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_8e544fc2ab40567e",
+      "question": "What useful tool helps scientists work with, understand and make predictions about extremely complex systems?",
+      "options": {
+        "A": "models",
+        "B": "guesses",
+        "C": "speculation",
+        "D": "assumptions"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_8f13ef0208b7212d",
+      "question": "What is the ability to see called?",
+      "options": {
+        "A": "hearing",
+        "B": "smell",
+        "C": "vision",
+        "D": "thought"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_9221ecfcff99c9d2",
+      "question": "Practitioners of what thought all matter was composed of different proportions of four basic elements, and that if you changed the proportions of these elements, you could change the substance itself?",
+      "options": {
+        "A": "phrenology",
+        "B": "alchemy",
+        "C": "chemistry",
+        "D": "biology"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_95bb988aa2faa238",
+      "question": "What do you call nutrients that your body needs in fairly large amounts?",
+      "options": {
+        "A": "macronutrients",
+        "B": "antioxidants",
+        "C": "B-complex",
+        "D": "super foods"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_9640c28b0c6ada94",
+      "question": "The nucleus from a differentiated frog cell can direct development of what?",
+      "options": {
+        "A": "embryo",
+        "B": "tadpole",
+        "C": "ovary",
+        "D": "fetus"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_967413e1f41fe015",
+      "question": "Isotopes are named for their number of protons plus what?",
+      "options": {
+        "A": "isomers",
+        "B": "neutrons",
+        "C": "electrons",
+        "D": "nuclei"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_9710f09b6070bfe3",
+      "question": "What are located along convergent and divergent plate boundaries?",
+      "options": {
+        "A": "dunes",
+        "B": "mezas",
+        "C": "volcanoes",
+        "D": "megaliths"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_978dab91c31c98c7",
+      "question": "What makes up the dense outer layer of bones?",
+      "options": {
+        "A": "compact bone",
+        "B": "adipose tissue",
+        "C": "ligaments",
+        "D": "plasma"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_9b8e16766c7264f1",
+      "question": "Animals with better fitness have a better chance of passing their genes onto the next generation, this process is known as?",
+      "options": {
+        "A": "natural evolution",
+        "B": "natural selection",
+        "C": "fitness selection",
+        "D": "survival selection"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_9bdf7fc3b8fc51f8",
+      "question": "What is the the process by which remains or traces of living things become fossils called?",
+      "options": {
+        "A": "extirpation",
+        "B": "fossilization",
+        "C": "fasciculation",
+        "D": "gentrification"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_9d07b51b74b7f840",
+      "question": "Monosaccharides, disaccharides, and polysaccharides are types of what kind of macromolecule?",
+      "options": {
+        "A": "nutrients",
+        "B": "carbohydrate",
+        "C": "glucose",
+        "D": "protein"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_9f3431a8a8120c9f",
+      "question": "What do methanogens act as in sewage treatment plants?",
+      "options": {
+        "A": "killers",
+        "B": "creators",
+        "C": "as decomposers",
+        "D": "fertilizers"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a040967ba4c80d75",
+      "question": "What theory states that there is no interaction between individual gas particles?",
+      "options": {
+        "A": "Avoidance theory",
+        "B": "vortex theory",
+        "C": "viscosity theory",
+        "D": "kinetic theory"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a25a8bb7ad0e6daa",
+      "question": "What group of animals has adapted to live in both water and on land?",
+      "options": {
+        "A": "herbivores",
+        "B": "amphibians",
+        "C": "reptiles",
+        "D": "omnivores"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a301736ba8d6ea96",
+      "question": "What type of mirror is shaped like the outside of a bowl?",
+      "options": {
+        "A": "vertex",
+        "B": "slope",
+        "C": "convex",
+        "D": "concave"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a3e4a6bda77f4093",
+      "question": "Oxygen is combined with what to form water?",
+      "options": {
+        "A": "glucose",
+        "B": "hydrogen",
+        "C": "carbon",
+        "D": "helium"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a428ac97bd22a7e4",
+      "question": "The similarities and differences between the genomes confirm patterns of what?",
+      "options": {
+        "A": "fossils",
+        "B": "evolution",
+        "C": "phylum",
+        "D": "variation"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a5af515dd7f05940",
+      "question": "What are catalysts in living things called?",
+      "options": {
+        "A": "enzymes",
+        "B": "carbohydrates",
+        "C": "proteins",
+        "D": "carbohydrates"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a66659b047ec13d8",
+      "question": "Algae produce food using what process?",
+      "options": {
+        "A": "cellular respiration",
+        "B": "glycolysis",
+        "C": "photosynthesis",
+        "D": "spermatogenesis"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a6746546ff664727",
+      "question": "What term always refers to acceleration in the direction opposite to the direction of the velocity and always reduces speed, unlike negative acceleration?",
+      "options": {
+        "A": "calibration",
+        "B": "deceleration",
+        "C": "progression",
+        "D": "extraction"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a8b7d66d2c451e7d",
+      "question": "Presence of a cell wall, large central vacuole, and organelles called plastids distinguish what type of cell?",
+      "options": {
+        "A": "reproductive",
+        "B": "plant",
+        "C": "heterotroph",
+        "D": "animal"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a95666cb32f7e820",
+      "question": "What is the term for a measure of both speed and direction?",
+      "options": {
+        "A": "momentum",
+        "B": "intensity",
+        "C": "acceleration",
+        "D": "velocity"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_a9af0fec15808f79",
+      "question": "What do induction cooktops have under their surface?",
+      "options": {
+        "A": "screws",
+        "B": "clumps",
+        "C": "electromagnets",
+        "D": "Chambers"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_aa4ae58d4c687cd7",
+      "question": "What indicates horizontal distance and are also found on the map legend?",
+      "options": {
+        "A": "spikes",
+        "B": "variations",
+        "C": "scales",
+        "D": "edges"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ab99b0e6033c6d18",
+      "question": "The spokes of what structures that distinguish saturn appear seasonally, with an origin as yet unknown?",
+      "options": {
+        "A": "moons",
+        "B": "craters",
+        "C": "rings",
+        "D": "satellites"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_acc57b78d9a75d6a",
+      "question": "Digestion of proteins begins with acids in what organ?",
+      "options": {
+        "A": "colon",
+        "B": "liver",
+        "C": "stomach",
+        "D": "brain"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ad5b9d18599c5c5c",
+      "question": "Skyscrapers and other large structures built on soft ground must be anchored to what, located below the ground surface?",
+      "options": {
+        "A": "ocean floor",
+        "B": "bedrock",
+        "C": "water table",
+        "D": "groundwater"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ad83819df64d84a9",
+      "question": "What system possesses a memory component that allows for an efficient and dramatic response upon reinvasion of the same pathogen?",
+      "options": {
+        "A": "adaptive immune system",
+        "B": "societal immune system",
+        "C": "incorporate immune system",
+        "D": "suggestive immune system"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_adf0c567f7ba9ff2",
+      "question": "Melting ice is drastically impacting the number of what at glacier national park?",
+      "options": {
+        "A": "trees",
+        "B": "gaisers",
+        "C": "active glaciers",
+        "D": "icebergs"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ae703804123bdd88",
+      "question": "Hypersection by an endocrine gland is often caused by what?",
+      "options": {
+        "A": "inflammation",
+        "B": "calcium",
+        "C": "viruses",
+        "D": "tumor"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ae9eb406c98d4b99",
+      "question": "The sternocleidomastoid is the major muscle that laterally flexes and rotates what?",
+      "options": {
+        "A": "head",
+        "B": "tongue",
+        "C": "knee",
+        "D": "eye"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_b2ee4704a3b7de64",
+      "question": "What occurs when excess carbon dioxide in the atmosphere causes the oceans to become acidic?",
+      "options": {
+        "A": "ocean vaporization",
+        "B": "acid rain",
+        "C": "desalinization",
+        "D": "ocean acidification"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_b3864fe1398f6365",
+      "question": "As the telencephalon enlarges and grows into the cranial cavity, it is limited by the space within what bone structure?",
+      "options": {
+        "A": "skull",
+        "B": "chest",
+        "C": "skeleton",
+        "D": "spine"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_b4895e27a93ece48",
+      "question": "What is the most important function of enzymes in animals?",
+      "options": {
+        "A": "transport messages",
+        "B": "help digest food",
+        "C": "carry oxygen",
+        "D": "excrete waste"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_b6ba65f6ca893f58",
+      "question": "By the year 2050, 25 percent of the population of the united states will be 60 years of age or older. the cdc estimates that 80 percent of those 60 years and older have one or more chronic disease associated with deficiencies of this?",
+      "options": {
+        "A": "respiratory system",
+        "B": "cardiovascular system",
+        "C": "blood vessels",
+        "D": "immune system"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_b75da9cf8f993168",
+      "question": "Where are liverworts most often found?",
+      "options": {
+        "A": "in deserts",
+        "B": "along stream beds",
+        "C": "in the ocean",
+        "D": "on mountains"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_b8e313b9b204f1f3",
+      "question": "Unlike matter, which is continuously recycled through ecosystems, what must constantly be added to an ecosystem for use by organisms?",
+      "options": {
+        "A": "carbon",
+        "B": "energy",
+        "C": "hydrogen",
+        "D": "fuel"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_b9c2f1741c669358",
+      "question": "What broad group of organisms is characterized by sensory organs, the ability to move, internal digestion and sexual reproduction?",
+      "options": {
+        "A": "animals",
+        "B": "plants",
+        "C": "protists",
+        "D": "fungi"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ba5c5962d0e15b3b",
+      "question": "In the grand canyon, the same rock layers are visible on opposite sides of the canyon and were deposited simultaneously, which is an example of what?",
+      "options": {
+        "A": "lateral continuity",
+        "B": "bilateral continuity",
+        "C": "width continuity",
+        "D": "directly continuity"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ba702afa77fb831f",
+      "question": "What is the diffusion of water through a semipermeable membrane down its concentration gradient",
+      "options": {
+        "A": "osmosis",
+        "B": "nutrients",
+        "C": "Permable",
+        "D": "mirrors"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_bb822260788cd3c1",
+      "question": "What ingredient has been used in brewing, winemaking and baking for thousands of years?",
+      "options": {
+        "A": "yeast",
+        "B": "oils",
+        "C": "fruit",
+        "D": "flour"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_bbdd77a91a81fdce",
+      "question": "By exploding what the space probes get separated from their launchers?",
+      "options": {
+        "A": "bolts",
+        "B": "doors",
+        "C": "frames",
+        "D": "walls"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_bce39658271de426",
+      "question": "According to the special theory of relativity, no physical object can equal or exceed the speed of what?",
+      "options": {
+        "A": "energy",
+        "B": "air",
+        "C": "weight",
+        "D": "light"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_bd02533bf0694b45",
+      "question": "While the goal of science is to increase knowledge, the goal of what is to use knowledge for practical purposes?",
+      "options": {
+        "A": "technology",
+        "B": "advancement",
+        "C": "industry",
+        "D": "invention"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_bda4f99b88340f7a",
+      "question": "What do voltmeters measure across a resistor?",
+      "options": {
+        "A": "the voltage drop",
+        "B": "amplitude",
+        "C": "the vibration drop",
+        "D": "energy loss"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_bde55a71d6cb3f52",
+      "question": "What are the best-known extinct vertebrates?",
+      "options": {
+        "A": "trees",
+        "B": "dinosaurs",
+        "C": "trilobites",
+        "D": "snakes"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_c0386df798f740ae",
+      "question": "What is the height above or below sea level called?",
+      "options": {
+        "A": "variation",
+        "B": "elevation",
+        "C": "depth",
+        "D": "latitude"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_c0b41851333eb558",
+      "question": "Illustrating how form follows function, long, slender protein strands that make up what tissue are essential for contracting and relaxing?",
+      "options": {
+        "A": "muscle",
+        "B": "veins",
+        "C": "ligaments",
+        "D": "tendons"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_c2e1cdbabff52fc9",
+      "question": "In a plant, the flower contains what?",
+      "options": {
+        "A": "bud and stem",
+        "B": "bees and blossoms",
+        "C": "seed and leaves",
+        "D": "pollen and eggs"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_c3905241a634838a",
+      "question": "The feeding positions in a food chain or web are called?",
+      "options": {
+        "A": "consumer levels",
+        "B": "producer levels",
+        "C": "trophic levels",
+        "D": "secondary levels"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_c63d56d65f1fef48",
+      "question": "How frequently do high tides occur?",
+      "options": {
+        "A": "Every 96 hours",
+        "B": "Every 24 hours",
+        "C": "every 12 hours",
+        "D": "Every 48 hours"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_c79e71670f2e2ef0",
+      "question": "Both the forward reaction and the reverse reaction continue to occur, so chemical equilibrium is said to be what, rather than static?",
+      "options": {
+        "A": "abrasive",
+        "B": "dynamic",
+        "C": "stable",
+        "D": "fluid"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_c7b6fb70021f76e1",
+      "question": "What is essential for population of all species to expand greatly?",
+      "options": {
+        "A": "liquid resources",
+        "B": "abundant resources",
+        "C": "foliage resources",
+        "D": "chemical resources"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_c8790820a46791d0",
+      "question": "What is the term for the preserved remains or traces of organisms that lived in the past?",
+      "options": {
+        "A": "detritis",
+        "B": "corals",
+        "C": "fossils",
+        "D": "bones"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_cace8f73c6d80fe0",
+      "question": "Ions flow through atp synthase from the thylakoid space into the stroma in a process called known as what?",
+      "options": {
+        "A": "chemiosmosis",
+        "B": "oxidation",
+        "C": "fertilization",
+        "D": "respiration"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_caec26c0475f834e",
+      "question": "Sounds are produced when muscles in what organ are tensed, stretching the cords so they vibrate?",
+      "options": {
+        "A": "larnyx",
+        "B": "diaphragm",
+        "C": "thorax",
+        "D": "throat"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_cb3461110afc7d1f",
+      "question": "During a human pregnancy, which trimester exhibits the greatest growth of the fetus and culminates in labor and delivery?",
+      "options": {
+        "A": "second trimester",
+        "B": "third trimester",
+        "C": "first trimester",
+        "D": "fourth trimester"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_cd3cb677340217d5",
+      "question": "What term describes the process of vesicles fusing with the plasma membrane and releasing their contents to the outside of the cell?",
+      "options": {
+        "A": "exocytosis",
+        "B": "endocytosis",
+        "C": "plasmosis",
+        "D": "biosynthesis"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_cd7d8338982d4c93",
+      "question": "Myofibrils are long cylindrical structures that lie parallel to and run the entire length of what fibers?",
+      "options": {
+        "A": "skeletal muscle fibers",
+        "B": "heart muscle fibers",
+        "C": "luminous muscle fibers",
+        "D": "uplift muscle fibers"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_cf901a7aec269a61",
+      "question": "Lyme disease is caused by what kind of organim?",
+      "options": {
+        "A": "bacterium",
+        "B": "bacteria",
+        "C": "algae",
+        "D": "Virus"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_d09f59d9f8cac315",
+      "question": "What three parts is the earth divided into?",
+      "options": {
+        "A": "crust, core, magma",
+        "B": "crust, mantle, core",
+        "C": "oceans, land, air",
+        "D": "troposphere, atomosphere, xerosphere"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_d2cb8372c6bdfdb2",
+      "question": "What are atoms of the same element that differ in their numbers of neutrons called?",
+      "options": {
+        "A": "reactions",
+        "B": "organisms",
+        "C": "opposites",
+        "D": "isotopes"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_d37bbfdf96e96d7a",
+      "question": "What sort of walls are helpful for keeping a slope stable?",
+      "options": {
+        "A": "managing walls",
+        "B": "retaining walls",
+        "C": "relocating walls",
+        "D": "diverting walls"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_d45286d49cc01b9e",
+      "question": "What do we call the visible part of the electromagnetic spectrum?",
+      "options": {
+        "A": "electricity",
+        "B": "weight",
+        "C": "light",
+        "D": "radio"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_d664245fdf444928",
+      "question": "What forms when one substances dissolves in another?",
+      "options": {
+        "A": "a solution",
+        "B": "a transition",
+        "C": "concentrate",
+        "D": "complex"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_d9c26b1612e67295",
+      "question": "In contrast with cnidarians, nematodes show a tubular morphology and circular cross-section. these animals are pseudocoelomates and show the presence of a complete digestive system with a distinct mouth and this?",
+      "options": {
+        "A": "stomach",
+        "B": "anus",
+        "C": "mucus",
+        "D": "hairs"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_da1b317fa61b1dd4",
+      "question": "Oranges and lemons are examples of fruits that contain what acid?",
+      "options": {
+        "A": "beryllium acid",
+        "B": "urea acid",
+        "C": "nitric acid",
+        "D": "citric acid"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_da79309bbb7695aa",
+      "question": "When water is aerated it can provide a plant's roots with what gas for cellular respiration?",
+      "options": {
+        "A": "nitrogen",
+        "B": "oxygen",
+        "C": "carbon dioxide",
+        "D": "carbon"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_dad9072b7f86a00e",
+      "question": "Animals are classified according to morphological and developmental characteristics, such as a body plan. with the exception of sponges, the animal body plan is symmetrical. this means that their distribution of body parts is balanced along this?",
+      "options": {
+        "A": "ulna",
+        "B": "skull",
+        "C": "axis",
+        "D": "radius"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_daf800e6b5b1ee62",
+      "question": "Chewing insects mechanically damage plants and lessen the surface area of leaves for what?",
+      "options": {
+        "A": "tissues",
+        "B": "photosynthesis",
+        "C": "nutrients",
+        "D": "vegetation"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_dccb317b77fb8c3e",
+      "question": "Acidic hydrogen atoms are those which will be transferred to what?",
+      "options": {
+        "A": "another atom",
+        "B": "water",
+        "C": "a cup",
+        "D": "a base"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ddbe52df51be3fde",
+      "question": "What disease is unpreventable in the type one form but may be prevented by diet if it is of the second type?",
+      "options": {
+        "A": "Cancer",
+        "B": "diabetes",
+        "C": "Obesity",
+        "D": "TB"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_de763e484f9ec0e0",
+      "question": "What is it called when birds keep their eggs warm while the embryos inside develop?",
+      "options": {
+        "A": "incubation",
+        "B": "spawning",
+        "C": "insulation",
+        "D": "fertilization"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_df3495ee7730c23e",
+      "question": "The ladybug and the frog both start as eggs and go through what process?",
+      "options": {
+        "A": "parthenogenesis",
+        "B": "transition",
+        "C": "metamorphosis",
+        "D": "proboscis"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_e014a5d2c98b94d0",
+      "question": "The lens and other parts of the eye work together to focus a real image on what eye structure?",
+      "options": {
+        "A": "pupil",
+        "B": "iris",
+        "C": "cornea",
+        "D": "retina"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_e09c1c9bd8cca45a",
+      "question": "Radioactive nuclei and particles are represented by which symbols?",
+      "options": {
+        "A": "compound",
+        "B": "nuclear",
+        "C": "energy",
+        "D": "greek"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_e3a8b7f8dd457786",
+      "question": "The interaction between atomic orbitals is greatest when they have the same what?",
+      "options": {
+        "A": "temperature",
+        "B": "fuel",
+        "C": "energy",
+        "D": "mass"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_e49807bc5172c9e0",
+      "question": "Proteins are categorized according to shape and what property, which correlates with it?",
+      "options": {
+        "A": "viscosity",
+        "B": "size",
+        "C": "solubility",
+        "D": "salinity"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_e537a556069749cd",
+      "question": "What is the end product of glycolysis?",
+      "options": {
+        "A": "pyruvate",
+        "B": "hydrolysis",
+        "C": "fructose",
+        "D": "gluclose"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_e9399b1d51036b6c",
+      "question": "All cells have a jellylike substance in which subcellular components are suspended. what is that substance?",
+      "options": {
+        "A": "cytosol",
+        "B": "cortisol",
+        "C": "plasma",
+        "D": "glycerol"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_eaa5137da7479f4c",
+      "question": "Atoms of different elements have different numbers of what?",
+      "options": {
+        "A": "electrons",
+        "B": "nucleus",
+        "C": "protons",
+        "D": "neutrons"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_eb7aa8f4822dff98",
+      "question": "Water seeps into the ground through permeable material and stops when it reaches what?",
+      "options": {
+        "A": "Coral",
+        "B": "Bed Rock",
+        "C": "Lava",
+        "D": "impermeable rock"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ec928271e7209e15",
+      "question": "Who wrote the book on the origin of species?",
+      "options": {
+        "A": "Sagan",
+        "B": "darwin",
+        "C": "Scopes",
+        "D": "cannon"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_edad8ddebdf33f8d",
+      "question": "What system provides a major route for heat flow between the interior and exterior of the body?",
+      "options": {
+        "A": "nervous system",
+        "B": "respiratory system",
+        "C": "excretory system",
+        "D": "the circulatory system"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_ee541d21e4e6e474",
+      "question": "What are thought to have evolved at least 200 million years ago from gymnosperms like gnetae?",
+      "options": {
+        "A": "cone-bearing plants",
+        "B": "yeasts",
+        "C": "flowering plants",
+        "D": "deciduous trees"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_f3fe645e5c4bbe41",
+      "question": "What is the transition from solid to vapor is called?",
+      "options": {
+        "A": "vaporization",
+        "B": "sublimation",
+        "C": "ionization",
+        "D": "deposition"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_f4fac7f7d0b0bf38",
+      "question": "Questioning claims based on their scientific verifiability rather than accepting claims based on faith or anecdotes is called what?",
+      "options": {
+        "A": "scientific skepticism",
+        "B": "scientific fact",
+        "C": "scientific extreme",
+        "D": "scientific mimicry"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_f537a14a6ce74f25",
+      "question": "In a correctly balanced equation, all coefficients must be what kind of numbers?",
+      "options": {
+        "A": "negative",
+        "B": "fractional",
+        "C": "prime",
+        "D": "whole"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_f6553d3ab9908fec",
+      "question": "Which cavity, filled with lubricating serous fluid, lies between the epicardium and the pericardium?",
+      "options": {
+        "A": "pericardial cavity",
+        "B": "thoracic cavity",
+        "C": "oral cavity",
+        "D": "cranial cavity"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_f75ab12ae3c50f4e",
+      "question": "The development of the respiratory system in the fetus begins at about?",
+      "options": {
+        "A": "4 weeks",
+        "B": "2 weeks",
+        "C": "4 days",
+        "D": "4 months"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_f7de256c7dbd63ce",
+      "question": "Where on a jellyfish is the mouth opening located?",
+      "options": {
+        "A": "right side",
+        "B": "top",
+        "C": "underside",
+        "D": "left side"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_f87480d719a8d580",
+      "question": "What is the term for groups of cells with a similar appearance and a common function, and describes how cells are organized?",
+      "options": {
+        "A": "kidney",
+        "B": "heart",
+        "C": "tissue",
+        "D": "muscle"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_f9c8d1d09e740bf3",
+      "question": "Sensory nerves carry nerve impulses from sensory receptors to what system?",
+      "options": {
+        "A": "ENDOCRINE SYSTEM",
+        "B": "central nervous",
+        "C": "MUSCULAR SYSTEM",
+        "D": "IRCULATORY SYSTEM"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_fb0adbc2e39475d5",
+      "question": "What is the term for something changing from water to ice?",
+      "options": {
+        "A": "melting",
+        "B": "freezing",
+        "C": "boiling",
+        "D": "evaporation"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_fb1e062806f87d68",
+      "question": "What is the official name for the study of life?",
+      "options": {
+        "A": "biology",
+        "B": "chemistry",
+        "C": "geology",
+        "D": "botany"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_fc525614bd506631",
+      "question": "What is the basic unit of the structure and function of living things?",
+      "options": {
+        "A": "cell",
+        "B": "nucleus",
+        "C": "molecule",
+        "D": "atom"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_fd9a94bc63462967",
+      "question": "What do you call water that flows out of the ground where an aquifer meets the surface?",
+      "options": {
+        "A": "oasis",
+        "B": "waterfall",
+        "C": "stream",
+        "D": "spring"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_fda62f7be85a6dea",
+      "question": "What do ecosystems absorb on the earth?",
+      "options": {
+        "A": "water",
+        "B": "hydrogen",
+        "C": "energy",
+        "D": "fuel"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "dataset": "sciq",
+      "question_id": "SCIQ_fe25b092bcc9a4f9",
+      "question": "What is added to a measured portion of a more concentrated stock solution to achieve a particular concentration?",
+      "options": {
+        "A": "solvent",
+        "B": "water",
+        "C": "pigment",
+        "D": "yeast"
+      },
+      "correct_answer": "A"
+    }
+  ]
+}

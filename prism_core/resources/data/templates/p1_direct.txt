@@ -1,0 +1,10 @@
+Answer the following multiple-choice question. Select the correct option.
+
+{question}
+
+A. {option_a}
+B. {option_b}
+C. {option_c}
+D. {option_d}
+
+Return only the letter of the correct option.

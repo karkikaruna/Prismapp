@@ -1,0 +1,125 @@
+name: Build desktop app (Windows / macOS / Ubuntu)
+
+on:
+  workflow_dispatch: {}
+  push:
+    tags:
+      - "v*"
+
+env:
+  APP_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || '0.0.0-dev' }}
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            artifact_name: prism-windows-installer
+          - os: macos-latest
+            artifact_name: prism-macos-dmg
+          - os: ubuntu-latest
+            artifact_name: prism-linux-packages
+
+    runs-on: ${{ matrix.os }}
+
+    env:
+      PRISM_SUPABASE_URL: ${{ secrets.PRISM_SUPABASE_URL }}
+      PRISM_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.PRISM_SUPABASE_PUBLISHABLE_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build with PyInstaller
+        run: pyinstaller prism.spec --clean --noconfirm
+
+      - name: Build Windows installer (Inno Setup)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $version = "${{ env.APP_VERSION }}".TrimStart("v")
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" `
+            "packaging\windows\installer.iss" "/DMyAppVersion=$version"
+
+      - name: Upload Windows installer
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: dist/PRISM-Setup-*.exe
+          if-no-files-found: error
+
+      - name: Build macOS .dmg
+        if: runner.os == 'macOS'
+        run: |
+          version="${APP_VERSION#v}"
+          chmod +x packaging/macos/build_dmg.sh
+          ./packaging/macos/build_dmg.sh "$version"
+
+      - name: Upload macOS dmg
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: dist/PRISM-*.dmg
+          if-no-files-found: error
+
+      - name: Install Linux packaging tools
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libfuse2 dpkg-dev
+
+      - name: Build AppImage
+        if: runner.os == 'Linux'
+        run: |
+          chmod +x packaging/linux/build_appimage.sh
+          ./packaging/linux/build_appimage.sh
+
+      - name: Build .deb
+        if: runner.os == 'Linux'
+        run: |
+          version="${APP_VERSION#v}"
+          chmod +x packaging/linux/build_deb.sh
+          ./packaging/linux/build_deb.sh "$version"
+
+      - name: Upload Linux packages
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: |
+            dist/PRISM-x86_64.AppImage
+            dist/*.deb
+          if-no-files-found: error
+
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifacts/prism-windows-installer/*
+            artifacts/prism-macos-dmg/*
+            artifacts/prism-linux-packages/*

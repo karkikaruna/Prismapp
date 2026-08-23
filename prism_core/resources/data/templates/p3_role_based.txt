@@ -1,0 +1,12 @@
+You are a knowledgeable subject-matter expert.
+
+Answer the following multiple-choice question.
+
+{question}
+
+A. {option_a}
+B. {option_b}
+C. {option_c}
+D. {option_d}
+
+Return only the letter of the correct option.
