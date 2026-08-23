@@ -25,6 +25,7 @@ block_cipher = None
 
 datas = [
     ("prism_core/resources/data", "prism_core/resources/data"),
+    ("app/resources", "app/resources"),   # logo/wordmark PNGs
     ("supabase/schema.sql", "supabase"),
 ]
 
@@ -98,9 +99,3 @@ app = BUNDLE(
         "CFBundleShortVersionString": "1.0.0",
     },
 )
-
-datas = [
-    ("prism_core/resources/data", "prism_core/resources/data"),
-    ("app/resources", "app/resources"),   # ← added: logo/wordmark PNGs
-    ("supabase/schema.sql", "supabase"),
-]
