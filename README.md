@@ -102,7 +102,7 @@ cp .env.example .env
 | `PRISM_SUPABASE_URL` | Optional Supabase project URL for cloud sync | No |
 | `PRISM_SUPABASE_PUBLISHABLE_KEY` | Optional publishable/anon key for syncing results | No |
 
-> ⚠️ **Security note:** Only ever use a **publishable/anon** Supabase key here. Never commit or bundle a service-role or secret key inside the desktop app or the Git repository. Cloud sync is entirely optional — PRISM works fully offline without it.
+> ⚠️ **Security note:** Only ever use a **publishable/anon** Supabase key here. Never commit or bundle a service-role or secret key inside the desktop app or the Git repository. Cloud sync is entirely optional, PRISM works fully offline without it.
 
 ---
 
