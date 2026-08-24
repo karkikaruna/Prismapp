@@ -1,16 +1,27 @@
-<div align="center">
-
-<img src="app/resources/prism_logo.png" alt="PRISM logo" width="160"/>
-
+<table>
+<tr>
+<td width="160" align="center">
+<img src="app/resources/prism_logo.png" alt="PRISM logo" width="140"/>
+</td>
+<td>
 # PRISM
-
+### Prompt Reliability & Inconsistency Scoring for Models
+ 
 *A cross-platform desktop app for benchmarking the behavioral consistency of local LLMs running on Ollama.*
 
-[Features](#-features) • [Installation](#-installation) • [Configuration](#-configuration) • [Usage](#-usage) • [Architecture](#-project-structure) • [Contributing](#-contributing) 
-
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](#installation)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+ 
+</td>
+</tr>
+</table>
+<div align="center">
+[Features](#-features) • [Installation](#-installation) • [Configuration](#-configuration) • [Usage](#-usage) • [Architecture](#-project-structure) • [Contributing](#-contributing)
+ 
 </div>
-
 ---
+
 
 ## About
 
