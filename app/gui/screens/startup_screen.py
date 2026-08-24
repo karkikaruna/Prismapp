@@ -65,6 +65,17 @@ class ModelRow(QFrame):
         self.public_pill.setVisible(public_results.has_published_result(model_tag))
         top.addWidget(self.public_pill, 0, Qt.AlignmentFlag.AlignVCenter)
 
+        # Shown proactively as soon as the row is populated (see
+        # set_ram_status below) - so a person scanning the list at launch
+        # can see which models their device likely can't handle *before*
+        # clicking anything, not only after they've already selected one.
+        self.ram_pill = pill("LOW RAM", "#ea6b6b", "rgba(234, 107, 107, 0.12)")
+        self.ram_pill.setToolTip(
+            "This device may not have enough RAM to run this model well."
+        )
+        self.ram_pill.setVisible(False)
+        top.addWidget(self.ram_pill, 0, Qt.AlignmentFlag.AlignVCenter)
+
         self.status_pill = pill("CHECKING\u2026", "#9c99a8", "transparent")
         top.addWidget(self.status_pill, 0, Qt.AlignmentFlag.AlignVCenter)
 
@@ -127,6 +138,26 @@ class ModelRow(QFrame):
         self.action_btn.setEnabled(True)
         self.action_btn.setVisible(True)
         self.stop_btn.setVisible(False)
+
+    def set_ram_status(self, shortfall: tuple[float, float] | None) -> None:
+        """Proactive per-row RAM badge, independent of selection - set the
+        instant the list is populated/refreshed so it's visible on launch
+        for every not-yet-installed row, not just whichever one the person
+        happens to click. ``shortfall`` is ``(required_gb, available_gb)``
+        from backend.check_ram_for_model(), or None if this device looks
+        fine for this model (or it's already installed - see
+        StartupScreen._refresh_model_rows, which skips the check there)."""
+        if shortfall is None:
+            self.ram_pill.setVisible(False)
+            self.setToolTip("")
+            return
+        required_gb, available_gb = shortfall
+        self.ram_pill.setVisible(True)
+        self.setToolTip(
+            f"Recommends about {required_gb:.0f} GB of RAM; this device has "
+            f"about {available_gb:.1f} GB. It may run very slowly, swap "
+            "heavily, or fail to load."
+        )
 
     def set_not_found(self, message: str) -> None:
         """Pin this row to a terminal "doesn't exist" state: no pull/
@@ -662,13 +693,14 @@ class StartupScreen(QWidget):
         self._load_locally_installed_models()
         self._refresh_model_rows()
 
-        remembered = app_state.get_selected_model()
-        if remembered and remembered in self.model_rows:
-            self._select_model(remembered)
-        elif self.model_rows and self.selected_model_tag is None:
-            self._select_model(next(iter(self.model_rows)))
-        else:
-            self._update_continue_btn()
+        # Nothing is ever restored here - the model choice isn't persisted
+        # across launches at all (see app_state.py). Every session starts
+        # with no model selected, and _update_continue_btn() shows "Select
+        # a model" (disabled) until the person actually clicks one. This
+        # also means the app never needs to reconcile a stale remembered
+        # tag against whatever's actually still installed - one less thing
+        # that can go wrong or drift.
+        self._update_continue_btn()
 
     def _select_model(self, tag: str) -> None:
         if tag not in self.model_rows:
@@ -689,22 +721,38 @@ class StartupScreen(QWidget):
         return row.display_tag if row is not None else tag
 
     def _update_ram_warning(self, tag: str) -> None:
-        """Surface an insufficient-RAM warning inline, right away, as soon
-        as a model is picked - before the user ever clicks Pull/Continue."""
+        """Surface a soft, non-blocking RAM warning inline, right away, as
+        soon as a model is picked - before the user ever clicks Pull/
+        Continue. Purely advisory: it never disables the row or Continue,
+        it just lets the person know this device may struggle with the
+        model they picked (the hard block, for devices far too small to
+        even load the model, lives separately in _confirm_ram_ok, which
+        fires at the moment Pull is actually clicked)."""
         installed = backend.is_installed(tag)
-        shortfall = None if installed else backend.check_ram_for_model(tag)
+        if installed:
+            self.ram_warning_label.setVisible(False)
+            self.ram_warning_label.setText("")
+            return
+
+        shortfall = backend.check_ram_for_model(tag)
         if shortfall is None:
             self.ram_warning_label.setVisible(False)
             self.ram_warning_label.setText("")
             return
+
         required_gb, available_gb = shortfall
+        self.ram_warning_label.setStyleSheet(
+            "color:#e8b45c; background: rgba(232,180,92,0.10); "
+            "border: 1px solid rgba(232,180,92,0.35); border-radius: 6px; "
+            "padding: 8px 10px;"
+        )
         self.ram_warning_label.setText(
-            f"\u26a0 \u201c{self._display_tag(tag)}\u201d recommends about {required_gb:.0f} GB of RAM, "
-            f"but this device has only {available_gb:.1f} GB. It may run very "
-            "slowly, swap heavily, or fail to load."
+            f"\u26a0 Limited RAM: \u201c{self._display_tag(tag)}\u201d recommends about "
+            f"{required_gb:.0f} GB of RAM, but this device has about "
+            f"{available_gb:.1f} GB. It may run slowly or struggle to load. "
+            "You can still continue, or pick a smaller model."
         )
         self.ram_warning_label.setVisible(True)
-
     def _update_continue_btn(self) -> None:
         tag = self.selected_model_tag
         if not tag:
@@ -745,7 +793,6 @@ class StartupScreen(QWidget):
         if not tag or not self._connected:
             return
 
-        app_state.set_selected_model(tag)
         if not backend.is_installed(tag):
             # Let the person proceed with a not-yet-installed model - they
             # just can't run inference against it (run_screen.start_run()
@@ -818,7 +865,14 @@ class StartupScreen(QWidget):
             # name only, which falsely marked e.g. qwen2.5:0.5b as
             # installed whenever any other qwen2.5:* tag was actually on
             # disk.
-            row.set_installed(backend.is_installed(tag))
+            installed = backend.is_installed(tag)
+            row.set_installed(installed)
+            # Proactive RAM badge, independent of selection - see
+            # ModelRow.set_ram_status. Only meaningful for not-yet-installed
+            # models: one already installed and running today doesn't need
+            # a warning about running it (mirrors _confirm_ram_ok's own
+            # "already installed skips the check" rule at pull time).
+            row.set_ram_status(None if installed else backend.check_ram_for_model(tag))
         if self.selected_model_tag:
             self._update_ram_warning(self.selected_model_tag)
         self._update_continue_btn()
@@ -913,8 +967,8 @@ class StartupScreen(QWidget):
             return
         # Normalize a bare tag (no ":size"/":variant") to its explicit
         # ":latest" form for the *internal* identity only - row dict key,
-        # app_state.selected_model, Supabase custom_models, has_data/
-        # is_installed lookups all need one canonical form so a bare
+        # Supabase custom_models, has_data/is_installed lookups all need
+        # one canonical form so a bare
         # "qwen2.5" and an explicit "qwen2.5:latest" are recognized as the
         # same model. Never shown to the person, though - every label and
         # message below uses ``raw_tag`` (what they actually typed) so
@@ -1072,7 +1126,6 @@ class StartupScreen(QWidget):
         if self._auto_continue_tag == model_tag:
             self._auto_continue_tag = None
             if ok and backend.is_installed(model_tag):
-                app_state.set_selected_model(model_tag)
                 self.model_chosen.emit(model_tag)
             elif not cancelled and not not_found:
                 QMessageBox.critical(

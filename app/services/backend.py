@@ -184,6 +184,21 @@ def model_label(model_tag: str) -> str:
 # device, never a hard block (the user can always choose to continue).
 # --------------------------------------------------------------------------
 
+
+# --------------------------------------------------------------------------
+# RAM checks - advisory warning before pulling a model too big for this
+# device, never a hard block (the user can always choose to continue).
+# --------------------------------------------------------------------------
+
+# Mixture-of-experts tags (e.g. "mixtral:8x7b", "8x22b") must be matched
+# *before* the plain-size pattern below, or the plain pattern matches just
+# the per-expert size ("7b" inside "8x7b") and drastically underestimates
+# a MoE model's real memory footprint - Mixtral-8x7B needs RAM for all 8
+# experts' weights resident at once (~47B params total), not a 7B model's
+# worth. ``experts * per_expert_b`` is a conservative (slightly high)
+# stand-in for the real total-parameter count, which errs toward warning
+# too early rather than too late.
+_MOE_PARAM_COUNT_RE = re.compile(r"(\d+)\s*x\s*(\d+(?:\.\d+)?)\s*b(?![a-zA-Z])", re.IGNORECASE)
 _PARAM_COUNT_RE = re.compile(r"(\d+(?:\.\d+)?)\s*b(?![a-zA-Z])", re.IGNORECASE)
 
 
@@ -202,30 +217,82 @@ def system_ram_gb() -> Optional[float]:
         return None
 
 
+def _param_count_from_ollama(model_tag: str) -> Optional[float]:
+    """Best-effort fallback: ask Ollama's ``/api/show`` for this model's
+    real parameter count (in billions) when the tag string itself gives
+    no usable hint (e.g. ``llama3.3``, ``qwen3:latest``). Only meaningful
+    if Ollama already has the model (or its manifest) locally - a tag
+    that's never been pulled anywhere on this machine may not resolve.
+    Any failure here (Ollama unreachable, model truly unknown, unexpected
+    response shape) is swallowed and treated as "still unknown" rather
+    than raised, since this is only ever a secondary estimate."""
+    try:
+        info = ollama.show(model_tag)
+    except Exception:
+        return None
+
+    details = info.get("details") or {}
+    raw = details.get("parameter_size") or info.get("parameter_size")
+    if not raw:
+        return None
+    match = re.search(r"(\d+(?:\.\d+)?)\s*([bBmM])", str(raw))
+    if not match:
+        return None
+    try:
+        value = float(match.group(1))
+    except ValueError:
+        return None
+    if match.group(2).lower() == "m":
+        value /= 1000.0  # millions -> billions
+    return value if value > 0 else None
+
+
 def estimate_model_ram_gb(model_tag: str) -> Optional[float]:
     """Recommended RAM to run ``model_tag``, in GiB.
 
     Uses the curated figure in :data:`config.MODELS` for the four
     validated models. For any other tag (custom/cloud-saved models), it
-    falls back to parsing a parameter count out of the tag itself (e.g.
-    ``qwen2.5:14b`` -> 14) and estimates ~2x that in GB, which is the rule
-    of thumb Ollama itself uses for RAM sizing. Returns ``None`` when no
-    estimate can be made (e.g. a tag with no discernible parameter count),
-    in which case callers should skip the RAM check entirely rather than
-    warn on a guess.
+    tries, in order:
+
+    1. A mixture-of-experts pattern (``mixtral:8x7b`` -> 8 experts x 7B),
+       since the plain pattern below would otherwise match just the
+       per-expert size and badly underestimate a MoE model's footprint.
+    2. A plain parameter count in the tag itself (``qwen2.5:14b`` -> 14).
+    3. Asking Ollama directly for the model's real parameter count, for
+       tags that don't spell a size out at all (``llama3.3``).
+
+    Whatever parameter count is found, RAM is estimated at ~2x that in
+    GB - the rule of thumb Ollama itself uses for sizing. Returns
+    ``None`` only when none of the above yields anything, in which case
+    callers should skip the RAM check rather than warn on a guess.
     """
     meta = config.MODELS.get(model_tag)
     if meta and "min_ram_gb" in meta:
         return float(meta["min_ram_gb"])
 
-    match = _PARAM_COUNT_RE.search(model_tag)
-    if not match:
-        return None
-    try:
-        params_b = float(match.group(1))
-    except ValueError:
-        return None
-    if params_b <= 0:
+    params_b: Optional[float] = None
+
+    moe_match = _MOE_PARAM_COUNT_RE.search(model_tag)
+    if moe_match:
+        try:
+            experts = float(moe_match.group(1))
+            per_expert_b = float(moe_match.group(2))
+            params_b = experts * per_expert_b
+        except ValueError:
+            params_b = None
+
+    if params_b is None:
+        match = _PARAM_COUNT_RE.search(model_tag)
+        if match:
+            try:
+                params_b = float(match.group(1))
+            except ValueError:
+                params_b = None
+
+    if params_b is None:
+        params_b = _param_count_from_ollama(model_tag)
+
+    if params_b is None or params_b <= 0:
         return None
     return max(4.0, round(params_b * 2))
 

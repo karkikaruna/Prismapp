@@ -42,6 +42,7 @@ from __future__ import annotations
 
 import json
 import logging
+import platform
 import shutil
 import sqlite3
 import subprocess
@@ -110,8 +111,20 @@ def _curl_request(
     cmd.append(url)
 
     try:
+        # PRISM is a windowed (console=False) build on Windows, so a
+        # console-subsystem child like curl.exe would otherwise flash a
+        # black console window into view for a moment - suppress that.
+        _quiet: dict = {}
+        if platform.system() == "Windows":
+            _startupinfo = subprocess.STARTUPINFO()
+            _startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+            _startupinfo.wShowWindow = subprocess.SW_HIDE  # type: ignore[attr-defined]
+            _quiet = {
+                "creationflags": subprocess.CREATE_NO_WINDOW,  # type: ignore[attr-defined]
+                "startupinfo": _startupinfo,
+            }
         proc = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=timeout + 5,
+            cmd, capture_output=True, text=True, timeout=timeout + 5, **_quiet,
         )
     except subprocess.TimeoutExpired as exc:
         raise _CurlError(f"curl timed out: {exc}") from exc

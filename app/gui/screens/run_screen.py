@@ -404,6 +404,52 @@ class RunScreen(QWidget):
             )
             return
 
+        # RAM check, mirrors StartupScreen._confirm_ram_ok's pull-time
+        # version - but that check only ever ran at *pull* time. A model
+        # can end up installed-but-unchecked here in several ways (pulled
+        # on a different, beefier machine and copied over; pulled before
+        # this check existed; pulled via a plain `ollama pull` outside the
+        # app entirely) - a full benchmark run is exactly the sustained,
+        # heavy-load scenario most likely to actually exhaust RAM and crash
+        # the device, so this needs its own gate right before Start, not
+        # just at download time.
+        hard_error = backend.model_compatibility_error(self.model_tag)
+        if hard_error is not None:
+            QMessageBox.critical(self, "Model not supported on this device", hard_error)
+            self.status_title.setText("Insufficient RAM")
+            self.status_sub.setText(
+                f"\u201c{self.model_tag}\u201d needs more RAM than this device has."
+            )
+            return
+
+        shortfall = backend.check_ram_for_model(self.model_tag)
+        if shortfall is not None:
+            required_gb, available_gb = shortfall
+            box = QMessageBox(self)
+            box.setIcon(QMessageBox.Icon.Warning)
+            box.setWindowTitle("Insufficient RAM for this model")
+            box.setText(
+                f"\u201c{backend.model_label(self.model_tag)}\u201d likely will not "
+                "run well on this device."
+            )
+            box.setInformativeText(
+                f"This model recommends at least {required_gb:.0f} GB of RAM, "
+                f"but this device has about {available_gb:.1f} GB available.\n\n"
+                "Running a full benchmark is sustained heavy load - this may "
+                "cause Ollama (or the whole device) to slow to a crawl, swap "
+                "heavily, or crash partway through the run.\n\n"
+                "Start the benchmark anyway?"
+            )
+            box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+            box.setDefaultButton(QMessageBox.StandardButton.No)
+            if box.exec() != QMessageBox.StandardButton.Yes:
+                self.status_title.setText("Run cancelled")
+                self.status_sub.setText(
+                    f"\u201c{self.model_tag}\u201d recommends more RAM than this "
+                    "device has available."
+                )
+                return
+
         datasets = [n for n, cb in self.dataset_checks.items() if cb.isChecked()]
         if not datasets:
             self.status_title.setText("Select at least one dataset")

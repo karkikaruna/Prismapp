@@ -23,7 +23,7 @@ import csv
 import json
 import shutil
 import sqlite3
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -99,9 +99,9 @@ def seed_bundled_results(conn: sqlite3.Connection, runs_root: Path) -> list[str]
         return []
 
     seeded: list[str] = []
-    now = datetime.now(timezone.utc).isoformat()
+    base_now = datetime.now(timezone.utc)
 
-    for model_tag in config.MODELS:
+    for i, model_tag in enumerate(config.MODELS):
         safe = paths.safe_model(model_tag)
         rows_for_model = [r for r in dataset_summary if paths.safe_model(r["model"]) == safe]
         if not rows_for_model:
@@ -114,10 +114,24 @@ def seed_bundled_results(conn: sqlite3.Connection, runs_root: Path) -> list[str]
         datasets_present = sorted({r["dataset"] for r in rows_for_model})
         question_count = int(float(rows_for_model[0].get("n_questions", 0) or 0))
 
+        # Every seeded run previously got the *exact same* timestamp (one
+        # `now` computed before the loop and reused for all four models),
+        # which meant "most recent completed run" - what
+        # store.list_runs()'s ORDER BY created_utc DESC, and anything
+        # downstream that reads its first row, relies on to mean anything
+        # - was actually a tie across all four models. The tie-break then
+        # came down to unspecified SQL/SQLite ordering behavior, which in
+        # practice resolved to the same model every time (Phi-4-mini) -
+        # i.e. an apparent "default" nobody chose. Stagger each seeded
+        # run's timestamp by a second per model (in stable config.MODELS
+        # order) so there's always a well-defined, deterministic answer to
+        # "which run is newest" instead of an accidental one.
+        run_time = (base_now + timedelta(seconds=i)).isoformat()
+
         store.insert_run(
             conn,
             benchmark_run_id=run_id,
-            created_utc=now,
+            created_utc=run_time,
             status="completed",
             model=model_tag,
             datasets=datasets_present,
@@ -126,7 +140,7 @@ def seed_bundled_results(conn: sqlite3.Connection, runs_root: Path) -> list[str]
             question_count=question_count,
             app_version="bundled-seed-1.0",
             protocol_version=config.PROTOCOL_VERSION,
-            finished_utc=now,
+            finished_utc=run_time,
         )
 
         for row in rows_for_model:

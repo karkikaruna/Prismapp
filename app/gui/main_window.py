@@ -202,10 +202,26 @@ class MainWindow(QMainWindow):
         bar = QStatusBar()
         bar.setObjectName("AppStatusBar")
         self.setStatusBar(bar)
+
+        
+
         self.ollama_status_lbl = QLabel("Ollama: checking\u2026")
+        _status_metrics = self.ollama_status_lbl.fontMetrics()
+        _widest_status_text = max(
+             ["\u25cf Ollama online", "\u25cb Ollama offline", "Ollama: checking\u2026"],
+                 key=lambda s: _status_metrics.horizontalAdvance(s),
+                )
+        self.ollama_status_lbl.setFixedWidth(
+         _status_metrics.horizontalAdvance(_widest_status_text) + 8
+            )
         bar.addPermanentWidget(self.ollama_status_lbl)
+
+
         self.data_path_lbl = QLabel(f"Local data: {backend.APP_DIR}")
         bar.addWidget(self.data_path_lbl)
+
+
+        
 
     # ------------------------------------------------------------ Qt events
 
@@ -376,7 +392,6 @@ class MainWindow(QMainWindow):
             return
         self._show_app_chrome()
         self.active_model = model_tag
-        app_state.set_selected_model(model_tag)
         self.model_badge.set_model(backend.model_label(model_tag))
         self.dashboard_screen.set_model(model_tag)
         self.run_screen.preselect_model(model_tag)
@@ -439,7 +454,6 @@ class MainWindow(QMainWindow):
             return
         self._show_app_chrome()
         self.active_model = model_tag
-        app_state.set_selected_model(model_tag)
         self.model_badge.set_model(backend.model_label(model_tag))
         self.dashboard_screen.set_model(model_tag)
         self.run_screen.preselect_model(model_tag)
@@ -493,25 +507,35 @@ class MainWindow(QMainWindow):
                 "Run inference to view the dashboard for this model.",
             )
             return
-        self._show_app_chrome()
         # By this point picked_tag, if given, is guaranteed to have data
         # (either it already did, or it was just imported above) - the
         # "no data" case returned early instead of falling through here.
-        # Only fall back to the remembered/first-available model when
-        # nothing was actively selected.
         if picked_tag and backend.has_data(conn, picked_tag):
             model_tag = picked_tag
         else:
-            model_tag = app_state.get_selected_model()
-            if not model_tag or not backend.has_data(conn, model_tag):
-                data = backend.models_with_data(conn)
-                model_tag = next(iter(data), None)
-        if model_tag:
-            self.active_model = model_tag
-            app_state.set_selected_model(model_tag)
-            self.model_badge.set_model(backend.model_label(model_tag))
-            self.dashboard_screen.set_model(model_tag)
-            self.run_screen.preselect_model(model_tag)
+            # Nothing was actively picked in the picker, and the app no
+            # longer remembers a choice across launches at all - never
+            # silently guess one on the person's behalf. This used to fall
+            # back first to a persisted "remembered" model, and before that
+            # to backend.models_with_data(conn) + next(iter(...)), i.e.
+            # "whichever model happens to sort first" - which, combined
+            # with the bundled seed data all sharing one timestamp (see
+            # seed.py), deterministically landed on the same model
+            # (Phi-4-mini) every time regardless of what the person
+            # actually wanted to look at. Simplest fix: there's nothing to
+            # fall back to any more, so just ask.
+            QMessageBox.information(
+                self,
+                "Select a model first",
+                "Please choose a model on the previous screen before "
+                "viewing the dashboard.",
+            )
+            return
+        self._show_app_chrome()
+        self.active_model = model_tag
+        self.model_badge.set_model(backend.model_label(model_tag))
+        self.dashboard_screen.set_model(model_tag)
+        self.run_screen.preselect_model(model_tag)
         self.outer_stack.fade_to(self.app_shell)
         self._show_tab("dashboard")
 

@@ -95,6 +95,39 @@ def _emit(cb: ProgressCB, stage: str, message: str, percent: Optional[float] = N
 
 
 # --------------------------------------------------------------------------
+# Windows: keep every child process silent
+# --------------------------------------------------------------------------
+# PRISM ships as a windowed PyInstaller build (console=False) - it has no
+# console of its own. On Windows, any child process that IS a
+# console-subsystem program (winget.exe, taskkill.exe, cmd-driven bits of
+# the Inno-built OllamaSetup.exe run, ...) gets a brand-new console window
+# allocated for it automatically unless told not to. Without this, every
+# "quiet" background step - installing Ollama, killing a stale server,
+# stopping it on shutdown - flashes a black console window in front of the
+# user for a moment, which is exactly the opposite of "quietly". Every
+# subprocess.run/Popen call in this module that can execute on Windows
+# passes **_quiet_kwargs() to suppress that. No-op on macOS/Linux.
+if platform.system() == "Windows":
+    _WIN_STARTUPINFO = subprocess.STARTUPINFO()
+    _WIN_STARTUPINFO.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+    _WIN_STARTUPINFO.wShowWindow = subprocess.SW_HIDE  # type: ignore[attr-defined]
+else:
+    _WIN_STARTUPINFO = None
+
+
+def _quiet_kwargs() -> dict:
+    """Extra kwargs that keep a child process from flashing a console
+    window on Windows. Merge with ``**_quiet_kwargs()`` into every
+    subprocess call that might run there. Empty dict on macOS/Linux."""
+    if platform.system() != "Windows":
+        return {}
+    return {
+        "creationflags": subprocess.CREATE_NO_WINDOW,  # type: ignore[attr-defined]
+        "startupinfo": _WIN_STARTUPINFO,
+    }
+
+
+# --------------------------------------------------------------------------
 # Detection
 # --------------------------------------------------------------------------
 
@@ -173,6 +206,7 @@ def _run(cmd: list[str], *, timeout: float, cwd: Optional[str] = None) -> subpro
         return subprocess.run(
             cmd, cwd=cwd, timeout=timeout,
             capture_output=True, text=True,
+            **_quiet_kwargs(),
         )
     except FileNotFoundError as exc:
         raise InstallerError(f"Couldn't run {cmd[0]!r} - it isn't on this device.", str(exc)) from exc
@@ -691,7 +725,7 @@ def _kill_stale_server_on_port(port: int = 11434) -> bool:
         try:
             r1 = subprocess.run(
                 ["taskkill", "/IM", "ollama app.exe", "/F", "/T"],
-                capture_output=True, timeout=5,
+                capture_output=True, timeout=5, **_quiet_kwargs(),
             )
             if r1.returncode == 0:
                 killed_anything = True
@@ -700,7 +734,7 @@ def _kill_stale_server_on_port(port: int = 11434) -> bool:
         try:
             r2 = subprocess.run(
                 ["taskkill", "/IM", "ollama.exe", "/F", "/T"],
-                capture_output=True, timeout=5,
+                capture_output=True, timeout=5, **_quiet_kwargs(),
             )
             if r2.returncode == 0:
                 killed_anything = True
@@ -762,7 +796,7 @@ def start(cb: ProgressCB = None) -> None:
         _run(["open", "-a", "Ollama"], timeout=15)
     else:
         binary = find_binary()
-        if binary is None:
+        if binary is None and system != "Windows":
             try:
                 result = subprocess.run(
                     ["sh", "-lc", "command -v ollama"],
@@ -774,11 +808,7 @@ def start(cb: ProgressCB = None) -> None:
                 pass
         if binary is None:
             raise InstallerError("Ollama isn't installed on this device yet.")
-        creationflags = 0
-        kwargs: dict = {}
-        if system == "Windows":
-            creationflags = subprocess.CREATE_NO_WINDOW  # type: ignore[attr-defined]
-            kwargs["creationflags"] = creationflags
+        kwargs: dict = _quiet_kwargs()
         try:
             subprocess.Popen(
                 [binary, "serve"],
@@ -859,7 +889,7 @@ def stop() -> bool:
         try:
             r1 = subprocess.run(
                 ["taskkill", "/IM", "ollama app.exe", "/F", "/T"],
-                capture_output=True, timeout=5,
+                capture_output=True, timeout=5, **_quiet_kwargs(),
             )
             if r1.returncode == 0:
                 stopped = True
@@ -868,7 +898,7 @@ def stop() -> bool:
         try:
             r2 = subprocess.run(
                 ["taskkill", "/IM", "ollama.exe", "/F", "/T"],
-                capture_output=True, timeout=5,
+                capture_output=True, timeout=5, **_quiet_kwargs(),
             )
             if r2.returncode == 0:
                 stopped = True
@@ -976,14 +1006,21 @@ def ensure_ollama(cb: ProgressCB = None, sudo_password_provider: SudoPasswordPro
         # process, etc). Before treating this as NOT_INSTALLED and running
         # the installer, do one more direct check via a shell so PATH is
         # resolved the same way a terminal would.
-        try:
-            result = subprocess.run(
-                ["sh", "-lc", "command -v ollama"],
-                capture_output=True, text=True, timeout=5,
-            )
-            shell_found = result.returncode == 0 and result.stdout.strip()
-        except Exception:
-            shell_found = False
+        shell_found = False
+        if platform.system() != "Windows":
+            # `sh` isn't a meaningful check on Windows (no POSIX shell by
+            # default), and even when one is on PATH via Git Bash/WSL it's
+            # a console-subsystem binary - skip it there entirely instead
+            # of risking a console flash for a check that wouldn't be
+            # authoritative anyway.
+            try:
+                result = subprocess.run(
+                    ["sh", "-lc", "command -v ollama"],
+                    capture_output=True, text=True, timeout=5,
+                )
+                shell_found = result.returncode == 0 and bool(result.stdout.strip())
+            except Exception:
+                shell_found = False
         if not shell_found:
             install(cb, sudo_password_provider)
     start(cb)

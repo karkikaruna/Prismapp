@@ -1,7 +1,13 @@
 """
-Small persisted app-state file (selected model, theme) - separate from the
-prism_core run index (SQLite) because it's UI state, not benchmark data.
-Lives at ~/.prism/app_state.json next to the run index and run outputs.
+Small persisted app-state file (theme, pending install/pull markers) -
+separate from the prism_core run index (SQLite) because it's UI state, not
+benchmark data. Lives at ~/.prism/app_state.json next to the run index and
+run outputs.
+
+Deliberately does NOT persist the selected model - the person picks a
+model fresh every launch (see StartupScreen._show_model_picker). The
+active model is only ever tracked in memory for the lifetime of the running
+app (MainWindow.active_model).
 """
 from __future__ import annotations
 
@@ -13,7 +19,6 @@ APP_DIR = Path.home() / ".prism"
 STATE_PATH = APP_DIR / "app_state.json"
 
 _DEFAULTS: dict[str, Any] = {
-    "selected_model": None,
     "theme": "paper",
     "pending_install": False,
     "pending_pull_tags": [],
@@ -35,16 +40,6 @@ def _read() -> dict[str, Any]:
 def _write(state: dict[str, Any]) -> None:
     APP_DIR.mkdir(parents=True, exist_ok=True)
     STATE_PATH.write_text(json.dumps(state, indent=2), encoding="utf-8")
-
-
-def get_selected_model() -> str | None:
-    return _read().get("selected_model")
-
-
-def set_selected_model(model_tag: str | None) -> None:
-    state = _read()
-    state["selected_model"] = model_tag
-    _write(state)
 
 
 def get_theme() -> str:
