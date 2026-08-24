@@ -9,10 +9,9 @@
 <td>
 
 # PRISM
-### Prompt Reliability & Inconsistency Scoring for Models
+### Prompt Reliability Through Intelligent Semantic Multiplexing
 
-*A cross-platform desktop application for benchmarking the behavioral consistency of local LLMs running on Ollama.*
-
+A cross- platform desktop application for benchmarking the behavioral consistency of local LLMs running on ollama.
 </td>
 </tr>
 </table>
@@ -21,28 +20,28 @@
 
 <div align="center">
 
-[Features](#-features) • [Installation](#-installation) • [Configuration](#-configuration) • [Usage](#-usage) • [Architecture](#-project-structure) • [Contributing](#-contributing) • [License](#-license)
+[Features](#-features) • [Installation](#-installation) • [Configuration](#-configuration) • [Usage](#-usage) • [Architecture](#-project-structure) • [Contributing](#-contributing)
 
 </div>
 
 ## About
 
-Most LLM benchmarks score a model on a single prompt per question — but real-world usage rarely looks like that. **PRISM** instead measures how *reliably* a model answers when the same question is asked in several semantically equivalent ways.
+Most LLM benchmarks score a model on a single prompt per question, but real-world usage rarely looks like that. **PRISM** instead measures how *reliably* a model answers when the same question is asked in several semantically equivalent ways.
 
-It runs a controlled evaluation pipeline against local **Ollama** models using validated datasets (ARC‑Challenge, SciQ), scores consistency and prompt sensitivity across five prompt variants (P₀–P₄), and presents the results in a native desktop analytics dashboard — no cloud inference, no API keys required.
+It runs a controlled evaluation pipeline against local **Ollama** models using validated datasets (ARC‑Challenge, SciQ), scores consistency and prompt sensitivity across five prompt variants (P₀–P₄), and presents the results in a native desktop analytics dashboard ,no cloud inference, no API keys required.
 
 ---
 
 ## Features
 
-- **Local Ollama Inference** — auto-detects installed models, monitors server health, and supports live model downloads with progress tracking.
-- **Controlled Benchmark Pipeline** — deterministic evaluation on ARC‑Challenge and SciQ using standardized generation settings.
-- **Prompt Reliability Scoring** — consistency, prompt sensitivity, deviation, and format adherence across prompt variants P₀–P₄.
-- **Interactive Analytics Dashboard** — native PySide6 UI with KPI cards, charts, per-question drill-down, and side-by-side model comparison.
-- **Crash-safe Benchmarking** — auto-saves progress on model crashes, OOM errors, or Ollama failures, with resume support.
-- **PDF Report Generation** — export publication-ready benchmark reports in one click.
-- **Offline Ready** — ships with bundled results for four baseline models so you can explore the dashboard with zero setup.
-- **Community Results Hub** — browse verified public results synced from the [official results repository](https://github.com/Nabin-16/Reliability-test-result-model-versions).
+- **Local Ollama Inference**: auto-detects installed models, monitors server health, and supports live model downloads with progress tracking.
+- **Controlled Benchmark Pipeline**: deterministic evaluation on ARC‑Challenge and SciQ using standardized generation settings.
+- **Prompt Reliability Scoring**: consistency, prompt sensitivity, deviation, and format adherence across prompt variants P₀–P₄.
+- **Interactive Analytics Dashboard**: native PySide6 UI with KPI cards, charts, per-question drill-down, and side-by-side model comparison.
+- **Crash-safe Benchmarking**: auto-saves progress on model crashes, OOM errors, or Ollama failures, with resume support.
+- **PDF Report Generation**: export publication-ready benchmark reports in one click.
+- **Offline Ready**: ships with bundled results for four baseline models so you can explore the dashboard with zero setup.
+- **Community Results Hub**: browse verified public results synced from the [official results repository](https://github.com/Nabin-16/Reliability-test-result-model-versions).
 
 ---
 
@@ -52,16 +51,16 @@ It runs a controlled evaluation pipeline against local **Ollama** models using v
 |---|---|
 | OS | Windows 10+, macOS 12+, or a modern Linux distro |
 | Python | 3.11 or newer (only needed to run from source) |
-| Ollama | Installed and running — [ollama.com](https://ollama.com) |
+| Ollama | 
 | Disk | Varies with the local models you pull via Ollama |
 
 ---
 
 ## Installation
 
-### Option 1 — Download a prebuilt installer (recommended for most users)
+### Option 1 : Download a prebuilt installer 
 
-Grab the latest release for your platform from the **[GitHub Releases page](https://github.com/karkikaruna/prism/releases)**:
+Grab the latest release for your platform from the **[PRISM WEBSITE](https://prism-slm-neon.vercel.app/)**:
 
 | Platform | Package |
 |---|---|
@@ -69,9 +68,9 @@ Grab the latest release for your platform from the **[GitHub Releases page](http
 | macOS | `PRISM-x.x.x.dmg` |
 | Linux | `PRISM-x86_64.AppImage` or `.deb` |
 
-Run the installer, launch PRISM, and make sure Ollama is running in the background.
+Run the installer, launch PRISM.
 
-### Option 2 — Run from source
+### Option 2 :Run from source
 
 ```bash
 # 1. Clone the repository
@@ -88,10 +87,6 @@ pip install -r requirements.txt
 # 4. Launch the app
 python main.py
 ```
-
-> **Tip:** Make sure Ollama is installed and running (`ollama serve`) before launching PRISM, and that you've pulled at least one model, e.g. `ollama pull llama3`.
-
----
 
 ## Configuration
 
@@ -113,9 +108,9 @@ cp .env.example .env
 
 ## Usage
 
-1. Launch PRISM — it will automatically detect any local Ollama models.
+1. Launch PRISM:  it will automatically detect any local Ollama models.
 2. Select one or more models to benchmark, or explore the **bundled baseline results** immediately.
-3. Run a benchmark against **ARC‑Challenge** or **SciQ** — PRISM generates five semantically equivalent prompt variants (P₀–P₄) per question.
+3. Run a benchmark against **ARC‑Challenge** or **SciQ**: PRISM generates five semantically equivalent prompt variants (P₀–P₄) per question.
 4. View results in the analytics dashboard: KPI cards, per-question drill-down, and side-by-side model comparison.
 5. Export a **PDF report** of your results, or opt in to **sync anonymized runs** to the community results hub for maintainer review.
 
@@ -187,9 +182,3 @@ Contributions are welcome! Whether it's a bug fix, a new dataset, a new scoring 
 Please don't include real Supabase secret/service-role keys, personal Ollama data, or large binary artifacts in your commits. Bug reports and feature requests are welcome via **GitHub Issues**.
 
 
-
-## Acknowledgements
-
-- [Ollama](https://ollama.com) for local LLM inference
-- ARC‑Challenge and SciQ dataset authors
-- The PRISM community for benchmark submissions and verified results
