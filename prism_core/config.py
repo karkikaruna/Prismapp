@@ -1,25 +1,3 @@
-"""PRISM core configuration - the single typed source of truth.
-
-Ported from the research ``config.py``. The **methodology constants** (seed,
-sample size, prompt conditions, temperature, num_predict, protocol/template/
-experiment identifiers, dataset registry) are preserved exactly so the ported
-parser/scorer/report/prompt code behaves identically to the validated research
-pipeline.
-
-Two deliberate changes from the research config:
-
-1. The fixed filesystem ``RESULTS_*`` directories are **not** global constants
-   here. In the product each benchmark run writes under its own
-   ``runs/<benchmark_run_id>/`` directory (see :mod:`prism_core.paths`), so run
-   outputs are never coupled to a single global location.
-2. Bundled read-only data (templates, frozen samples, prompts) is resolved via
-   :mod:`prism_core.resources` rather than a project-relative ``data/`` dir, so
-   it works in a wheel and under PyInstaller.
-
-New: ``DATASET_VERSION`` (the research had no explicit dataset version) feeds
-the reproducibility fingerprint, and the Ollama base URL is a configurable
-field with endpoint paths derived from it.
-"""
 from __future__ import annotations
 
 import os

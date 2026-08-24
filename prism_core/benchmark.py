@@ -1,30 +1,3 @@
-"""BenchmarkService - the end-to-end orchestrator.
-
-Sequences the validated pipeline for one model over one or more datasets:
-
-    load prompts → inference → parse → score → report
-
-and adds the product's provenance/bookkeeping around it: a unique
-``benchmark_run_id`` and run-scoped :class:`~prism_core.paths.RunPaths`, a
-per-(model, dataset) :func:`~prism_core.fingerprint.config_fingerprint`, a
-canonical ``summary.json`` at the run root, and a row in the SQLite run index.
-
-It is deliberately decoupled from both the network and the GUI:
-
-* ``generate_fn`` (default :func:`prism_core.ollama.generate`) and
-  ``model_digest`` are injectable, so the whole pipeline runs headless with a
-  mock Ollama and no sockets.
-* progress is reported through plain callbacks - ``progress_callback`` (per
-  request, forwarded to inference) and ``stage_callback`` (coarse stage
-  transitions) - which the GUI worker turns into Qt signals.
-
-Cancellation is cooperative via a :class:`threading.Event`: if inference reports
-a cancelled dataset the orchestrator stops, marks the run ``cancelled``, and
-writes the partial ``summary.json``. A cancelled run's per-dataset results are
-recorded but are **not** surfaced by the fingerprint-equivalence lookup (see
-:func:`prism_core.store.find_results_by_fingerprint`), so a partial run never
-masquerades as an existing complete benchmark.
-"""
 from __future__ import annotations
 
 import json

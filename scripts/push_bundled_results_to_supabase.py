@@ -1,32 +1,3 @@
-"""
-push_bundled_results_to_supabase
-=================================
-
-Headless admin push, ported from Karuna's ``push_to_supabase.py``. Separate
-from the GUI's own sync (``app/services/supabase_sync.py``, which every
-install runs automatically using the *publishable* key): this script is for
-publishing the maintainer's own validated / bundled results using the
-*secret* key, which must never ship inside the packaged app.
-
-Reads credentials from the environment only - never from a settings screen
-the GUI could expose:
-
-    PRISM_SUPABASE_URL
-    PRISM_SUPABASE_SECRET_KEY   (Project Settings -> API -> secret keys;
-                                  PRISM_SUPABASE_SERVICE_ROLE_KEY is still
-                                  read as a fallback on projects still using
-                                  Supabase's legacy JWT-based service_role key)
-
-Usage (from the project root, same folder as config.py):
-
-    export PRISM_SUPABASE_URL="https://xxxxxxxx.supabase.co"
-    export PRISM_SUPABASE_SECRET_KEY="sk_..."
-    python scripts/push_bundled_results_to_supabase.py
-
-Re-running is safe - every table is upserted against its natural key
-(same on_conflict targets as app/services/supabase_sync.py), so this never
-creates duplicate rows.
-"""
 from __future__ import annotations
 
 import json

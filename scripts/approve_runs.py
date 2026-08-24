@@ -1,36 +1,4 @@
-"""
-approve_runs
-============
 
-Maintainer-only review/approval step. This is the human gate between the
-shared Supabase mirror (every device writes here automatically with the
-anon key) and the public repo (which only ever receives approved=true
-rows via the public repo's own sync workflow, see the "public repo setup"
-section of README.md).
-
-Never used by the desktop app. Reads/writes with the service_role key,
-which must only ever exist as a maintainer-side env var or CI secret -
-never committed, never shipped in the packaged app.
-
-Usage:
-
-    export PRISM_SUPABASE_URL="https://xxxxxxxx.supabase.co"
-    export PRISM_SUPABASE_SECRET_KEY="sk_..."
-
-    # List everything awaiting review
-    python scripts/approve_runs.py list
-
-    # Approve one run by id
-    python scripts/approve_runs.py approve <benchmark_run_id> --by "yourname"
-
-    # Approve everything currently pending (use with care)
-    python scripts/approve_runs.py approve-all --by "yourname"
-
-    # Reject / permanently exclude a run (deletes it from the mirror so it
-    # never resurfaces in `list` - the device that submitted it can still
-    # re-sync a corrected version later under the same run id)
-    python scripts/approve_runs.py reject <benchmark_run_id>
-"""
 from __future__ import annotations
 
 import argparse
