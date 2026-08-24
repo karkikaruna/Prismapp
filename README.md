@@ -6,7 +6,7 @@
 
 *A cross-platform desktop app for benchmarking the behavioral consistency of local LLMs running on Ollama.*
 
-[Features](#-features) • [Installation](#-installation) • [Configuration](#-configuration) • [Usage](#-usage) • [Architecture](#-project-structure) • [Contributing](#-contributing) • [License](#-license)
+[Features](#-features) • [Installation](#-installation) • [Configuration](#-configuration) • [Usage](#-usage) • [Architecture](#-project-structure) • [Contributing](#-contributing) 
 
 </div>
 
